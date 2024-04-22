@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+.heading-1 {
+    @include heading($heading-1-fs, $heading-1-fw, $heading-1-clr)
+}
+
+.heading-2 {
+    @include heading($heading-2-fs, $heading-2-fw, $heading-2-clr)
+}
+
+.heading-3 {
+    @include heading($heading-3-fs, $heading-3-fw, $heading-3-clr)
+}

@@ -1,0 +1,48 @@
+$-ff-bree-serif: "Bree Serif", serif;
+$-ff-dm-sans: "DM Sans", sans-serif;
+
+$ff-base: $-ff-dm-sans;
+$ff-accent: $-ff-bree-serif;
+
+// font-sizes
+$fs-base: calc(15px + 0.390625vw);
+$fs-100: 1.3rem;
+$fs-200: 1.5rem;
+$fs-300: min($fs-base, 1.6rem);
+$fs-400: min($fs-base, 1.7rem);
+$fs-500: min($fs-base, 1.8rem);
+$fs-600: min($fs-base, 1.9rem);
+$fs-700: min($fs-base, 2rem);
+
+$fs-h1: clamp(3.2rem, 2.5vw + 2rem, 5.5rem);
+$fs-h2: clamp(2.5rem, 1vw + 2rem, 3.5rem);
+
+// font-weights
+$fw-300: 300;
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+
+// for utility classes
+$font-sizes: (
+  base: $fs-base,
+  h1: $fs-h1,
+  h2: $fs-h2,
+  100: 1.3rem,
+  200: 1.5rem,
+  300: 1.6rem,
+  400: min($fs-base, 1.7rem),
+  500: min($fs-base, 1.8rem),
+  600: min($fs-base, 1.9rem),
+  700: min($fs-base, 2rem),
+);
+
+$font-weights: (
+  200: 200,
+  300: 300,
+  400: 400,
+  500: 500,
+  600: 600,
+  700: 700,
+);

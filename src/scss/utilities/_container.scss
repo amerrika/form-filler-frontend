@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+$container-max-width-default: 1280px;
+$container-max-width-narrow: 900px;
+
+.container {
+  & {
+    @include container($container-max-width-default, 40px);
+  }
+
+  &-narrow {
+    @include container($container-max-width-narrow, 40px);
+  }
+
+  &-no-padding {
+    @include container($container-max-width-default, 0px);
+  }
+}
+
+//--- NOTES ---//
+// Width variables are defined in abstracts/sizes
+
+// Outputs:
+// .container --> default container
+// .container-narrow --> for narrowed sections
+// .container-no-padding --> if we don't want padding for container (on smaller displays)

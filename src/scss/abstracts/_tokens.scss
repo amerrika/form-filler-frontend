@@ -1,0 +1,70 @@
+@use "typography" as *;
+@use "colors" as *;
+@use "sizes" as *;
+@use "shadows" as *;
+
+// BODY
+$body-txt-clr: $neutral-900;
+$body-bg-clr: $neutral-100;
+
+// LAYOUT
+$grid-gap: 5rem;
+
+// BUTTONS
+$button-ff: $ff-base;
+$button-fs: $fs-100;
+$button-fw: $fw-600;
+$button-ls: 0;
+$button-tt: unset;
+$button-padding: 0.2em 0.7em;
+$button-default-bg: transparent;
+$button-border: 2px solid;
+$button-br: 3px;
+// primary
+$button-primary-bg: $button-default-bg;
+$button-primary-clr: $neutral-100;
+$button-primary-border-clr: $button-default-bg;
+// outline
+$button-outline-bg: $button-default-bg;
+$button-outline-clr: $neutral-500;
+$button-outline-border-clr: $neutral-700;
+// inverted
+$button-inverted-bg: $neutral-100;
+$button-inverted-clr: $neutral-900;
+$button-inverted-border-clr: $neutral-100;
+// muted
+$button-muted-bg: transparent;
+$button-muted-clr: $neutral-600;
+$button-muted-border-clr: transparent;
+
+// HEADINGS
+$heading-ff: $ff-accent;
+$heading-tt: unset;
+$heading-ls: 0;
+$heading-line-height: 1.1;
+$heading-clr-default: $neutral-900;
+
+$heading-1-fs: $fs-h1;
+$heading-1-fw: $fw-700;
+$heading-1-clr: $heading-clr-default;
+
+$heading-2-fs: $fs-h2;
+$heading-2-fw: $fw-700;
+$heading-2-clr: #845ec2;
+
+$heading-3-fs: $fs-base;
+$heading-3-fw: $fw-500;
+$heading-3-clr: $heading-clr-default;
+
+// FOOTER
+$footer-bg-clr: $neutral-100;
+$footer-clr: $neutral-700;
+$footer-fs: $fs-300;
+$footer-fw: $fw-400;
+// link
+$footer-link-ff: $ff-base;
+$footer-link-clr: $neutral-700;
+$footer-link-ls: 0;
+$footer-link-fs: $fs-300;
+$footer-link-fw: $fw-400;
+

@@ -1,0 +1,29 @@
+@use "./mixins" as *;
+@use "./colors" as *;
+
+%btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  @include focus($neutral-700);
+
+  &-center {
+    @extend %btn;
+    display: grid;
+    place-content: center;
+  }
+
+  &-flex-between {
+    @extend %btn;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-flex-start {
+    @extend %btn;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,19 @@
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+/* switch transitions */
+.switch-enter-from,
+.switch-leaver-to {
+  opacity: 0;
+}
+.switch-enter-active,
+.switch-leave-active {
+  transition: all 0.5s ease;
+}

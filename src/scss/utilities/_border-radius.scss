@@ -1,0 +1,7 @@
+@use "../abstracts/" as *;
+
+@each $size-name, $size-value in $br-sizes {
+    .br-#{$size-name}{
+        border-radius: $size-value;
+    }
+}

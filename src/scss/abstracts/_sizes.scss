@@ -1,0 +1,41 @@
+// fluid-size variables
+$fluid-size-200: calc(8px + 0.5625vw);
+$fluid-size-300: calc(8px + 1.5625vw);
+
+$fluid-size-700: calc(15px + 3.5625vw);
+$fluid-size-800: calc(15px + 4.5625vw);
+$fluid-size-900: calc(20px + 5.5625vw);
+
+// for utility classes
+$fixed-sizes: (
+  0: 0rem,
+  1: 0.5rem,
+  2: 1rem,
+  3: 1.5rem,
+  4: 2rem,
+  5: 3rem,
+  6: 4rem,
+  7: 5rem,
+  8: 6rem,
+  9: 8rem,
+  10: 10rem,
+);
+
+$br-sizes: (
+  5: 0.5rem,
+  10: 1rem,
+  15: 1.5rem,
+  20: 2rem,
+  25: 2.5rem,
+  50: 5rem,
+);
+
+$fluid-sizes: (
+  200: max(1rem, $fluid-size-200),
+  300: max(1rem, $fluid-size-300),
+  700: max(3rem, $fluid-size-700),
+  800: max(3rem, $fluid-size-800),
+  900: max(3rem, $fluid-size-900),
+);
+
+

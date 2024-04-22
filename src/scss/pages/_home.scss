@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+#app {
+  display: flex;
+}
+
+main {
+  flex-grow: 2;
+  background-color: $primary-100;
+}

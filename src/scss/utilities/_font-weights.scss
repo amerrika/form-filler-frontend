@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+@each $size, $value in $font-weights {
+  .fw-#{$size} {
+    font-weight: $value;
+  }
+}
+
+// --- NOTES --- //
+// Font-weights are defined in abstracts/typography

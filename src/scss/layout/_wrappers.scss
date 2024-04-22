@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.wrapper-2x2 {
+  display: grid;
+  gap: 5rem;
+  row-gap: 6rem;
+  @include mq(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.wrapper-3x3 {
+  display: grid;
+  gap: $grid-gap;
+  row-gap: 6rem;
+  @include mq(small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq(medium) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+}

@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+@each $size-name, $size-value in $fixed-sizes {
+  .w {
+    &-#{$size-name} {
+      width: $size-value;
+    }
+  }
+}

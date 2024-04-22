@@ -1,0 +1,45 @@
+@use "../abstracts/" as *;
+
+@each $size-name, $size-value in $fixed-sizes {
+  .m {
+    &-#{$size-name} {
+      margin: $size-value;
+    }
+    // block
+    &b-#{$size-name} {
+      margin-block: $size-value;
+    }
+    &b-start-#{$size-name} {
+      margin-block-start: $size-value;
+    }
+    &b-end-#{$size-name} {
+      margin-block-end: $size-value;
+    }
+    // inline
+    &i-#{$size-name} {
+      margin-inline: $size-value;
+    }
+    &i-start-#{$size-name} {
+      margin-inline-start: $size-value;
+    }
+    &i-end-#{$size-name} {
+      margin-inline-end: $size-value;
+    }
+  }
+}
+
+// --- NOTES --- //
+// m -> margin
+// mb -> margin-block
+// mi -> margin-inline
+
+// Output:
+// .m-3;
+// .mb-3;
+// .mb-start-3;
+// .mb-end-3;
+// .mi-3;
+// .mi-start-3;
+// .mi-end-3;
+
+// Sizes for margins are defined in abstracts/sizes

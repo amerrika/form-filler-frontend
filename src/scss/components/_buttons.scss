@@ -1,0 +1,64 @@
+@use "../abstracts/" as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.5;
+  letter-spacing: $button-ls;
+  font-family: $button-ff;
+  font-size: $button-fs;
+  font-weight: $button-fw;
+  text-transform: $button-tt;
+  padding: $button-padding;
+  background-color: $button-default-bg;
+  border: $button-border;
+  border-radius: $button-br;
+  //transition: 275ms ease;
+  width: fit-content;
+
+  @include hover-underline(1px);
+  @include focus;
+
+  // Primary
+  &[data-style="primary"] {
+    background-color: $button-primary-bg;
+    color: $button-primary-clr;
+    border-color: $button-primary-border-clr;
+  }
+
+  // Outline
+  &[data-style="outline"] {
+    background-color: $button-outline-bg;
+    color: $button-outline-clr;
+    border-color: $button-outline-border-clr;
+  }
+
+  // Inverted
+  &[data-style="inverted"] {
+    background-color: $button-inverted-bg;
+    color: $button-inverted-clr;
+    border-color: $button-inverted-border-clr;
+  }
+
+  // Muted
+  &[data-style="muted"] {
+    background-color: $button-muted-bg;
+    color: $button-muted-clr;
+    border-color: $button-muted-border-clr;
+  }
+
+  &.has-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    svg,
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

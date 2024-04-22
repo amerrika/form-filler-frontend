@@ -1,0 +1,14 @@
+$breakpoints: (
+  small: 40em,
+  medium: 64em,
+);
+
+// --- NOTES --- //
+// mobile first approach is used => mq mixin only uses min-width!
+
+// 40em = 640px
+// 64em = 1024px
+
+// all phones are under 40em
+// tablets are between 40em and 64em
+// desktop screens are greater than 64em

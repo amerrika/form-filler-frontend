@@ -1,0 +1,79 @@
+@use "../abstracts/" as *;
+
+// Responsive paddings
+@each $size-name, $size-value in $fluid-sizes {
+  .p {
+    &-#{$size-name} {
+      padding: $size-value;
+    }
+    // block
+    &b-#{$size-name} {
+      padding-block: $size-value;
+    }
+    &b-start-#{$size-name} {
+      padding-block-start: $size-value;
+    }
+    &b-end-#{$size-name} {
+      padding-block-end: $size-value;
+    }
+    // inline
+    &i-#{$size-name} {
+      padding-inline: $size-value;
+    }
+    &i-start-#{$size-name} {
+      padding-inline-start: $size-value;
+    }
+    &i-end-#{$size-name} {
+      padding-inline-end: $size-value;
+    }
+  }
+}
+
+// Fixed paddings
+@each $size-name, $size-value in $fixed-sizes {
+  .p {
+    &-#{$size-name} {
+      padding: $size-value;
+    }
+    // block
+    &b-#{$size-name} {
+      padding-block: $size-value;
+    }
+    &b-start-#{$size-name} {
+      padding-block-start: $size-value;
+    }
+    &b-end-#{$size-name} {
+      padding-block-end: $size-value;
+    }
+    // inline
+    &i-#{$size-name} {
+      padding-inline: $size-value;
+    }
+    &i-start-#{$size-name} {
+      padding-inline-start: $size-value;
+    }
+    &i-end-#{$size-name} {
+      padding-inline-end: $size-value;
+    }
+  }
+}
+
+// --- NOTES --- //
+// p -> padding
+// pb -> padding-block
+// pi -> padding-inline
+
+// Output for responsive paddings:
+// .p-300;
+// .pb-300;
+// .pb-start-300;
+// .pb-end-300;
+// .pi-300;
+// .pi-start-300;
+// .pi-end-300;
+
+// Output for fixed paddings:
+// p-0
+// pb-1...
+
+// Sizes for paddings are defined in abstracts/sizes

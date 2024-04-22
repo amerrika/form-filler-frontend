@@ -1,0 +1,82 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:map";
+@use "colors" as *;
+@use "breakpoints" as *;
+@use "tokens" as *;
+
+// Colors (for utility classes)
+@mixin colors-generator($attribute: "color") {
+  @each $clr-name, $clr-map in $colors {
+    &-#{$clr-name} {
+      @each $clr-shade, $clr-value in $clr-map {
+        &-#{$clr-shade} {
+          #{$attribute}: $clr-value;
+        }
+      }
+    }
+  }
+}
+
+// Container (for utility classes)
+@mixin container($width, $padding) {
+  width: min($width, 100% - $padding);
+  margin-inline: auto;
+}
+
+// Heading (for utility classes)
+@mixin heading($fs, $fw, $color: $heading-clr-default) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+
+  font-family: $heading-ff;
+  text-transform: $heading-tt;
+  letter-spacing: $heading-ls;
+  line-height: $heading-line-height;
+}
+
+// Media query
+@mixin mq($size) {
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint: map-get($breakpoints, $size);
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if meta.type-of($size) == number {
+    @if math.is-unitless($size) {
+      @error 'when using a number with mq() make sure to include a unit';
+    } @else {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'the keyword #{$size} is not in the $breakpoints map';
+  }
+}
+
+
+// Focus
+@mixin focus($color: black, $style: dotted) {
+  @include mq(small) {
+    &:focus,
+    &:focus-visible {
+      outline: 2px $style $color;
+      outline-offset: max(2px, 0.08em);
+    }
+    &:focus:not(:focus-visible) {
+      outline: 0;
+    }
+  }
+}
+
+// Hover
+@mixin hover-underline($thickness: 2px) {
+  @include mq(medium) {
+    &:hover {
+      text-decoration: $thickness solid underline $neutral-800;
+      text-underline-offset: 5px;
+    }
+  }
+}

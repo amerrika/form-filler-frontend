@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+@each $size, $value in $font-sizes {
+  .fs-#{$size} {
+    font-size: $value;
+  }
+}
+
+// --- NOTES --- //
+// Font sizes are defined in abstracts/typography

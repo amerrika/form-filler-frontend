@@ -1,0 +1,36 @@
+$colors: (
+  "neutral": (
+    "0": transparent,
+    "100": #ffffff,
+    "200": #f5f7fb,
+    "300": #e7eaf4,
+    "400": #c5c9da,
+    "500": #b0b4c5,
+    "600": #777c88,
+    "700": #64748b,
+    "800": #323232,
+    "900": #0d0e10,
+  ),
+  "primary": (
+    "100": #fafafa,
+    "500": #ebebeb,
+    "600": #e6e6e6,
+  ),
+);
+
+$neutral-100: #ffffff;
+$neutral-200: #f5f7fb;
+$neutral-300: #e7eaf4;
+$neutral-400: #c5c9da;
+$neutral-500: #b0b4c5;
+$neutral-600: #777c88;
+$neutral-700: #64748b;
+$neutral-800: #323232;
+$neutral-900: #0d0e10;
+
+$primary-100: #fafafa;
+$primary-500: #ebebeb;
+$primary-600: #e6e6e6;
+
+$alert-red: #a31000;
+$alert-green: #567911;
