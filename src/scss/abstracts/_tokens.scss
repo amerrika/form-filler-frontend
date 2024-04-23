@@ -38,7 +38,7 @@ $button-muted-clr: $neutral-600;
 $button-muted-border-clr: transparent;
 
 // HEADINGS
-$heading-ff: $ff-accent;
+$heading-ff: $ff-base;
 $heading-tt: unset;
 $heading-ls: 0;
 $heading-line-height: 1.1;
@@ -48,9 +48,9 @@ $heading-1-fs: $fs-h1;
 $heading-1-fw: $fw-700;
 $heading-1-clr: $heading-clr-default;
 
-$heading-2-fs: $fs-h2;
-$heading-2-fw: $fw-700;
-$heading-2-clr: #845ec2;
+$heading-2-fs: $fs-700;
+$heading-2-fw: $fw-500;
+$heading-2-clr: $heading-clr-default;
 
 $heading-3-fs: $fs-base;
 $heading-3-fw: $fw-500;
