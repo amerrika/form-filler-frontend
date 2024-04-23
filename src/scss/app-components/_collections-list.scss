@@ -1,0 +1,92 @@
+@use "../abstracts/" as *;
+
+// Block
+.collections-list {
+  box-shadow: $box-shadow-card;
+  border-radius: 1rem;
+  // temporary style
+  max-width: 100rem;
+  // Menu
+  &__menu {
+    margin-block-start: 2rem;
+  }
+  // Element
+  &__item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid $primary-600;
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    &:hover {
+      background-color: $primary-500;
+    }
+  }
+  // Element
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    // Modifier
+    &_company {
+      @extend .collections-list__icon;
+      background: url($icon-company);
+    }
+    &_employees {
+      @extend .collections-list__icon;
+      background: url($icon-employees);
+    }
+  }
+  // Element
+  &__title {
+    font-size: $fs-300;
+    font-weight: $fw-500;
+    width: clamp(5rem, 10vw, 15rem);
+  }
+  // Element
+  &__count {
+    font-size: $fs-300;
+    font-weight: $fw-500;
+    width: clamp(5rem, 10vw, 15rem);
+    flex-grow: 2;
+  }
+  // Element
+  &__btn-add {
+    @extend %btn-flex-between;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: $neutral-800;
+    font-size: $fs-100;
+    color: $primary-100;
+    width: clamp(5rem, 10vw, 15rem);
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  /*----------------
+  Info bar styles
+  ----------------*/
+  &__info-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    // temporary style
+    max-width: 100rem;
+  }
+  &__info-title,
+  &__info-count,
+  &__info-actions {
+    width: clamp(5rem, 10vw, 15rem);
+  }
+  &__info-icon {
+    width: 2rem;
+  }
+  &__info-count {
+    flex-grow: 2;
+  }
+}
