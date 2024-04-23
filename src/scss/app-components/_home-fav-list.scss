@@ -1,0 +1,44 @@
+@use "../abstracts/" as *;
+
+// Block
+.fav-list {
+  box-shadow: $box-shadow-card;
+  border-radius: 1rem;
+  // temporary style
+  max-width: 400px;
+  // Element
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary-500;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom: 1px solid $neutral-400;
+  }
+  // Element
+  &__menu {
+    background-color: $neutral-100;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    // padding-bottom and border-bottom
+    // for all but last
+    & > *:where(:not(:last-child)) {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $neutral-400;
+    }
+    // padding-top for all but first
+    & > *:where(:not(:first-child)) {
+        padding-top: 1rem;
+      }
+  }
+  // Element
+  &__item {
+    cursor: pointer;
+    font-size: $fs-300;
+
+    &:hover {
+        background-color: $neutral-400;
+    }
+  }
+}
