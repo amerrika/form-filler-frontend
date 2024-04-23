@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import FormsList from "@/views/FormsList.vue";
-import CollectionsList from "@/views/CollectionsList.vue";
+import CollectionsPage from "@/views/CollectionsPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,7 +19,7 @@ const router = createRouter({
     {
       path: "/collections",
       name: "collections",
-      component: CollectionsList,
+      component: CollectionsPage,
     },
   ],
 });
