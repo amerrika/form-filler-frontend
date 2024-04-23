@@ -25,7 +25,7 @@
     // for all but last
     & > *:where(:not(:last-child)) {
       padding-bottom: 1rem;
-      border-bottom: 1px solid $neutral-400;
+      border-bottom: 1px solid $primary-500;
     }
     // padding-top for all but first
     & > *:where(:not(:first-child)) {
@@ -38,7 +38,7 @@
     font-size: $fs-300;
 
     &:hover {
-        background-color: $neutral-400;
+        background-color: $primary-500;
     }
   }
 }
