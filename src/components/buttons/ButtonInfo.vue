@@ -24,5 +24,5 @@
       </g>
     </svg>
   </button>
-  <!-- For styles look at _app-buttons.scss -->
+  <!-- For styles look at buttons.scss -->
 </template>
