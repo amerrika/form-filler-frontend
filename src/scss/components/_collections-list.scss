@@ -4,9 +4,8 @@
 .collections-list {
   box-shadow: $box-shadow-card;
   border-radius: 1rem;
-  // temporary style
   max-width: 100rem;
-  // Menu
+  // Element
   &__menu {
     margin-block-start: 2rem;
   }
@@ -43,17 +42,13 @@
     }
   }
   // Element
-  &__title {
-    font-size: $fs-300;
-    font-weight: $fw-500;
-    width: clamp(5rem, 10vw, 15rem);
-  }
-  // Element
+  &__title,
   &__count {
     font-size: $fs-300;
     font-weight: $fw-500;
     width: clamp(5rem, 10vw, 15rem);
   }
+
   /*----------------
   Info bar styles
   ----------------*/

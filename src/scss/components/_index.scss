@@ -1,6 +1,8 @@
-@forward "buttons";
-@forward "headings";
-@forward "select-single";
-@forward "titles";
-
-
+@use "./buttons.scss";
+@use "./collections-list";
+@use "./companies-list";
+@use "./companies-toolbar";
+@use "./home-fav";
+@use "./main-nav.scss";
+@use "./main-header.scss";
+@use "./titles";
