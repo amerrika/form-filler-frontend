@@ -1,5 +1,5 @@
 <template>
-  <div class="page-title p-5">
+  <div class="page-title">
     <h1 class="heading-1">Baza svih kolekcija koje aplikacija koristi</h1>
     <ButtonInfo />
   </div>
