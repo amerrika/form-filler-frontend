@@ -1,5 +1,5 @@
 <template>
-  <button class="button-info">
+  <button class="btn-info">
     <svg
       fill="#3276c3"
       width="24px"
@@ -24,4 +24,5 @@
       </g>
     </svg>
   </button>
+  <!-- For styles look at _app-buttons.scss -->
 </template>

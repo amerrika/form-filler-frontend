@@ -1,5 +1,5 @@
 <template>
-  <button class="button-settings">
+  <button class="btn-settings">
     <svg
       width="18px"
       height="18px"
@@ -46,4 +46,5 @@
       </g>
     </svg>
   </button>
+  <!-- For styles look at _app-buttons.scss -->
 </template>

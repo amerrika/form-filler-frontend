@@ -1,11 +1,14 @@
 <template>
-  <div class="fav-list">
-    <div class="fav-list__header pi-3 pb-2">
-      <h3 class="fs-500 fw-500">{{ title }}</h3>
+  <!-- For styles look at home-fav.scss -->
+  <div class="home-fav">
+    <div class="home-fav__header pi-4 pb-2">
+      <h3 class="fs-500 fw-500 txt-neutral-600">{{ title }}</h3>
       <ButtonSettings />
     </div>
-    <ul class="fav-list__menu p-3">
-      <li role="button" class="fav-list__item" v-for="item in list">{{ item.title }}</li>
+    <ul class="home-fav__menu p-3">
+      <li role="button" class="home-fav__item fs-300" v-for="item in list">
+        {{ item.title }}
+      </li>
     </ul>
   </div>
 </template>
@@ -19,7 +22,7 @@ export default {
   },
   props: {
     title: String,
-    list: Array
-  }
+    list: Array,
+  },
 };
 </script>
