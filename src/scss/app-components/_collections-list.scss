@@ -12,17 +12,20 @@
   }
   // Element
   &__item {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding-block: 1rem;
-    border-bottom: 1px solid $primary-600;
-    &:not(:last-child) {
-      margin-bottom: 2rem;
-    }
-    &:hover {
-      background-color: $primary-500;
+    a {
+      color: $neutral-800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding-block: 1rem;
+      border-bottom: 1px solid $primary-600;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      &:hover {
+        background-color: $primary-500;
+      }
     }
   }
   // Element
@@ -50,24 +53,7 @@
     font-size: $fs-300;
     font-weight: $fw-500;
     width: clamp(5rem, 10vw, 15rem);
-    flex-grow: 2;
   }
-  // Element
-  &__btn-add {
-    @extend %btn-flex-between;
-    gap: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    background-color: $neutral-800;
-    font-size: $fs-100;
-    color: $primary-100;
-    width: clamp(5rem, 10vw, 15rem);
-    img {
-      width: 2rem;
-      height: 2rem;
-    }
-  }
-
   /*----------------
   Info bar styles
   ----------------*/
@@ -85,8 +71,5 @@
   }
   &__info-icon {
     width: 2rem;
-  }
-  &__info-count {
-    flex-grow: 2;
   }
 }
