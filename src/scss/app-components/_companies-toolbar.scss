@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+.companies-toolbar {
+    display: flex;
+    gap: 1.5rem;
+    font-size: $fs-400;
+    border-block: 1px solid $primary-600;
+    padding-block: 1rem;
+}
