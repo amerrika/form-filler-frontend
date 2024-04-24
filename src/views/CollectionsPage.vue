@@ -1,6 +1,6 @@
 <template>
   <div class="page-title">
-    <h1 class="heading-1">Baza svih kolekcija koje aplikacija koristi</h1>
+    <h1 class="heading-1">Baza svih kolekcija</h1>
     <ButtonInfo />
   </div>
   <CollectionsList />
