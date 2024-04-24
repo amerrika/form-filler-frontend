@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+// Block
+.companies-list {
+  // Element
+  &__item,
+  &__info-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  // Element
+  &__data {
+    width: clamp(10rem, 10vw, 15rem);
+    // Modifier
+    &_big {
+      width: clamp(10rem, 15vw, 20rem);
+    }
+  }
+}
