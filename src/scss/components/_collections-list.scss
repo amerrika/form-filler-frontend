@@ -19,9 +19,6 @@
       gap: 2rem;
       padding-block: 1rem;
       border-bottom: 1px solid $primary-600;
-      &:not(:last-child) {
-        margin-bottom: 2rem;
-      }
       &:hover {
         background-color: $primary-500;
       }
