@@ -3,7 +3,7 @@
 // Block
 .companies-list {
   // Element
-  &__item,
+  &__item a,
   &__info-bar {
     display: flex;
     align-items: center;
@@ -16,6 +16,15 @@
     // Modifier
     &_big {
       width: clamp(10rem, 15vw, 20rem);
+    }
+  }
+  // Router Link
+  a {
+    color: $neutral-800;
+    padding: 1rem;
+    border-bottom: 1px solid $primary-600;
+    &:hover {
+      background-color: $primary-500;
     }
   }
 }
