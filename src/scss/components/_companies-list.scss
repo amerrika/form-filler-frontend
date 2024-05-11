@@ -3,12 +3,11 @@
 // Block
 .companies-list {
   // Element
-  &__item a,
-  &__info-bar {
+  &__row a,
+  &__head {
     display: flex;
     align-items: center;
     gap: 2rem;
-    flex-wrap: wrap;
   }
   // Element
   &__data {
@@ -18,13 +17,14 @@
       width: clamp(10rem, 15vw, 20rem);
     }
   }
-  // Router Link
+  // Router link additional styles
   a {
     color: $neutral-800;
     padding: 1rem;
     border-bottom: 1px solid $primary-600;
     &:hover {
       background-color: $primary-500;
+      border-radius: 1rem;
     }
   }
 }
