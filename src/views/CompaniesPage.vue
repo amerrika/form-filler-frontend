@@ -4,18 +4,25 @@
     <ButtonInfo />
   </div>
   <CompaniesToolbar />
-  <CompaniesList />
+  <CompaniesList :companies="store.companies" />
 </template>
 <script>
 import ButtonInfo from "@/components/buttons/ButtonInfo.vue";
 import CompaniesToolbar from "@/components/CompaniesToolbar.vue";
 import CompaniesList from "@/components/CompaniesList.vue";
+import { useCompaniesStore } from "@/stores/CompaniesStore";
 
 export default {
   components: {
     ButtonInfo,
     CompaniesToolbar,
     CompaniesList,
+  },
+  setup() {
+    // access the store
+    const store = useCompaniesStore();
+
+    return { store };
   },
 };
 </script>
