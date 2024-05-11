@@ -24,7 +24,7 @@
   // Element
   &__item {
     padding: 1rem;
-    // no border for last items
+    /* no border for last items */
     &:where(:not(:last-child)) {
       border-bottom: 1px solid $primary-500;
     }
@@ -32,7 +32,7 @@
       background-color: $primary-500;
       border-radius: 1rem;
     }
-    // Select the item before the hovered one
+    /* Select the item before the hovered one */
     &:has(+ &:hover) {
       border-bottom: 1px solid transparent;
     }
