@@ -13,11 +13,6 @@
     padding: 1rem;
   }
   // Element
-  &__body {
-    margin-block-start: 2rem;
-  }
-
-  // Element
   &__data {
     width: clamp(10rem, 10vw, 15rem);
     // Modifier
@@ -39,14 +34,16 @@
       background: url($icon-employees);
     }
   }
-  // Router link additional styles
-  a {
-    color: $neutral-800;
-
+  // Element
+  &__row {
     border-bottom: 1px solid $primary-600;
     &:hover {
       background-color: $primary-500;
       border-radius: 1rem;
+    }
+    // Select the row before the hovered one
+    &:has(+ &:hover) {
+      border-bottom: 1px solid $neutral-100;
     }
   }
 }
