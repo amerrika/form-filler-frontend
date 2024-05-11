@@ -3,14 +3,12 @@
 // Block
 .collections-list {
   box-shadow: $box-shadow-card;
-  border-radius: 1rem;
   // Element
   &__row a,
   &__head {
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding: 1rem;
   }
   // Element
   &__data {
@@ -41,9 +39,9 @@
       background-color: $primary-500;
       border-radius: 1rem;
     }
-    // Select the row before the hovered one
+    /* Select the row before the hovered one */
     &:has(+ &:hover) {
-      border-bottom: 1px solid $neutral-100;
+      border-bottom: 1px solid transparent;
     }
   }
 }
