@@ -17,14 +17,16 @@
       width: clamp(10rem, 15vw, 20rem);
     }
   }
-  // Router link additional styles
-  a {
-    color: $neutral-800;
-    padding: 1rem;
+  // Element
+  &__row {
     border-bottom: 1px solid $primary-600;
     &:hover {
       background-color: $primary-500;
       border-radius: 1rem;
+    }
+    // Select the row before the hovered one
+    &:has(+ &:hover) {
+      border-bottom: 1px solid $neutral-100;
     }
   }
 }
