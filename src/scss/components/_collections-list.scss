@@ -4,24 +4,25 @@
 .collections-list {
   box-shadow: $box-shadow-card;
   border-radius: 1rem;
-  max-width: 100rem;
   // Element
-  &__menu {
-    margin-block-start: 2rem;
+  &__row a,
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
   }
   // Element
-  &__item {
-    a {
-      color: $neutral-800;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      padding-block: 1rem;
-      border-bottom: 1px solid $primary-600;
-      &:hover {
-        background-color: $primary-500;
-      }
+  &__body {
+    margin-block-start: 2rem;
+  }
+
+  // Element
+  &__data {
+    width: clamp(10rem, 10vw, 15rem);
+    // Modifier
+    &_big {
+      width: clamp(10rem, 15vw, 20rem);
     }
   }
   // Element
@@ -38,30 +39,14 @@
       background: url($icon-employees);
     }
   }
-  // Element
-  &__title,
-  &__count {
-    font-size: $fs-300;
-    font-weight: $fw-500;
-    width: clamp(5rem, 10vw, 15rem);
-  }
+  // Router link additional styles
+  a {
+    color: $neutral-800;
 
-  /*----------------
-  Info bar styles
-  ----------------*/
-  &__info-bar {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    // temporary style
-    max-width: 100rem;
-  }
-  &__info-title,
-  &__info-count,
-  &__info-actions {
-    width: clamp(5rem, 10vw, 15rem);
-  }
-  &__info-icon {
-    width: 2rem;
+    border-bottom: 1px solid $primary-600;
+    &:hover {
+      background-color: $primary-500;
+      border-radius: 1rem;
+    }
   }
 }
