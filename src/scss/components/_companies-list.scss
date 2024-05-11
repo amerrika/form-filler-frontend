@@ -24,7 +24,7 @@
       background-color: $primary-500;
       border-radius: 1rem;
     }
-    // Select the row before the hovered one
+    /* Select the row before the hovered one */
     &:has(+ &:hover) {
       border-bottom: 1px solid $neutral-100;
     }
