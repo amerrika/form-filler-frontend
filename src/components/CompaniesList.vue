@@ -13,7 +13,7 @@
     <div class="companies-list__body mb-start-4">
       <!-- Row -->
       <div class="companies-list__row" v-for="company in companies">
-        <router-link to="/collections/companies/id">
+        <router-link to="/collections/companies/id" class="txt-neutral-800 p-2">
           <div class="companies-list__data_big fs-200">
             {{ company.companyId }}
           </div>

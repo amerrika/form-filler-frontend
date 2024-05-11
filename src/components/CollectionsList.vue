@@ -8,10 +8,10 @@
       <div class="collections-list__data fs-100 fw-500">...</div>
     </div>
     <!-- Body -->
-    <div class="collections-list__body">
+    <div class="collections-list__body mb-start-4">
       <!-- Row -->
       <div class="collections-list__row">
-        <router-link to="/collections/companies">
+        <router-link to="/collections/companies" class="txt-neutral-800">
           <div class="collections-list__icon_company"></div>
           <div class="collections-list__data fs-200">Kompanije</div>
           <div class="collections-list__data fs-200">
@@ -21,7 +21,7 @@
       </div>
       <!-- Row -->
       <div class="collections-list__row">
-        <router-link to="/collections/employees">
+        <router-link to="/collections/employees" class="txt-neutral-800">
           <div class="collections-list__icon_employees"></div>
           <div class="collections-list__data fs-200">Zaposlenici</div>
           <div class="collections-list__data fs-200">160</div>
