@@ -1,5 +1,5 @@
 <template>
-  <div class="companies-toolbar mb-4">
+  <div class="companies-toolbar mb-4 pb-2">
     <div>Search input</div>
     <div>Search by</div>
     <FilterResults
