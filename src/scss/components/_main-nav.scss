@@ -8,22 +8,14 @@
     flex-direction: column;
     gap: 1.5rem;
   }
-
   // Element
-  &__item {
-    a {
-      padding: 0.5rem 0 0.5rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      @include hover-underline;
-      
-      color: $neutral-800;
-      font-size: $fs-300;
-      font-weight: $fw-500;
-    }
+  &__link {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    @include hover-underline;
   }
-
   // Element
   &__icon {
     height: 18px;
