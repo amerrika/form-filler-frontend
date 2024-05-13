@@ -6,7 +6,7 @@
       <button
         :class="[
           minimized
-            ? 'main-header__btn-toggle-minimized'
+            ? 'main-header__btn-toggle_minimized'
             : 'main-header__btn-toggle',
         ]"
         @click="toggle"
