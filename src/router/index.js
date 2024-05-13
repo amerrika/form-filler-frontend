@@ -4,6 +4,7 @@ import FormsList from "@/views/FormsList.vue";
 import CollectionsPage from "@/views/CollectionsPage.vue";
 import CompaniesPage from "@/views/CompaniesPage.vue";
 import EmployeesPage from "@/views/EmployeesPage.vue";
+import NewCompanyPage from "@/views/NewCompanyPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/collections/employees",
       name: "employees",
       component: EmployeesPage,
+    },
+    {
+      path: "/collections/companies/new",
+      name: "new-company",
+      component: NewCompanyPage,
     },
   ],
 });
