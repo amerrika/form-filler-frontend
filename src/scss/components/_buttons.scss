@@ -1,22 +1,25 @@
 @use "../abstracts/" as *;
 
-// Block
-.btn-add {
+// Placeholders
+%btn-add {
   @extend %btn-flex-start;
   font-size: $fs-300;
   font-weight: $fw-600;
   color: $primary-blue;
   img {
-    width: 2rem;
-    height: 2rem;
-  }
-  // Element
-  &__employee,
-  &__company {
-    @extend .btn-add;
+    @include size-equal(2rem);
   }
 }
 
+// Block
+.btn-add {
+  @extend %btn-add;
+  // Element
+  &__employee,
+  &__company {
+    @extend %btn-add;
+  }
+}
 // Block
 .btn-info,
 .btn-settings {
