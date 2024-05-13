@@ -17,11 +17,13 @@
       >
         <li
           v-for="group in filterData"
-          :class="['filter__item_' + getTheme]"
+          :class="['filter__menu-item_' + getTheme]"
           :key="group.id"
         >
           <ul :class="['filter__submenu_' + getTheme]">
-            <p class="filter__submenu-title">{{ group.title }}</p>
+            <li role="heading" class="filter__submenu-title">
+              {{ group.title }}
+            </li>
             <li
               v-for="option in group.options"
               role="option"
