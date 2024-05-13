@@ -1,7 +1,15 @@
 @use "../abstracts/" as *;
 
-// svg icons
-$icon-arrow-down: 'data:image/svg+xml,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --><svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/><g id="SVGRepo_iconCarrier"><g clip-path="url(%23clip0_429_11251)"><path d="M7 10L12 15" stroke="%23292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 15L17 10" stroke="%23292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_429_11251"><rect width="24" height="24" fill="white"/></clipPath></defs></g></svg>';
+// styles to be shared
+%primary-shared {
+  background-color: $primary-100;
+  box-shadow: $box-shadow-card;
+  color: $neutral-800;
+  border-radius: 0.5rem;
+  font-size: $fs-200;
+  min-width: 12rem;
+  padding: 1rem;
+}
 
 // Block
 .filter {
@@ -13,22 +21,24 @@ $icon-arrow-down: 'data:image/svg+xml,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1/
     justify-content: space-between;
     gap: 0.5rem;
     border: none;
-    box-shadow: $box-shadow-card;
+
     // Modifier
     &_primary {
       @extend .filter__btn-toggle;
-      padding-block: 0.2rem;
-      padding-inline: 0.8rem;
-      background-color: $primary-100;
-      color: $neutral-800;
-      border-radius: 0.5rem;
-      font-size: $fs-200;
+      @extend %primary-shared;
       font-weight: $fw-500;
-      min-width: 12rem;
       &:hover {
         background-color: $primary-500;
       }
     }
+  }
+  // Element
+  &__arrow {
+    @extend %btn;
+    width: 2rem;
+    height: 2rem;
+    background: url($icon-arrow-down);
+    background-position: center;
   }
   // Element
   &__menu {
@@ -41,14 +51,7 @@ $icon-arrow-down: 'data:image/svg+xml,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1/
     // Modifier
     &_primary {
       @extend .filter__menu;
-      background-color: $primary-100;
-      color: $neutral-800;
-      padding-inline: 1rem;
-      padding-block: 1rem;
-      font-size: $fs-200;
-      border-radius: 0.5rem;
-      min-width: 12rem;
-      box-shadow: $box-shadow-card;
+      @extend %primary-shared;
     }
   }
   // Element
@@ -85,13 +88,5 @@ $icon-arrow-down: 'data:image/svg+xml,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1/
   // Modifier
   &_primary {
     @extend .filter;
-  }
-  //////////////////////////////////////////////
-  &__arrow {
-    @extend %btn;
-    width: 2rem;
-    height: 2rem;
-    background: url($icon-arrow-down);
-    background-position: center;
   }
 }
