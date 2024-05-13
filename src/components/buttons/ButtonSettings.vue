@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-settings">
+  <button class="btn-settings p-1 br-5">
     <svg
       width="18px"
       height="18px"

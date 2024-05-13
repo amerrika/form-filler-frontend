@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-info">
+  <button class="btn-info p-1 br-5">
     <svg
       fill="#3276c3"
       width="24px"
