@@ -21,8 +21,6 @@
 .btn-info,
 .btn-settings {
   @extend %btn-center;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
   &:hover {
     background-color: $neutral-500;
   }
