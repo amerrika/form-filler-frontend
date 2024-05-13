@@ -9,19 +9,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: $primary-500;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     border-bottom: 1px solid $neutral-400;
   }
   // Element
   &__menu {
-    background-color: $neutral-100;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
   }
   // Element
   &__item {
+    cursor: pointer;
     /* remove border-bottom for last items */
     &:where(:not(:last-child)) {
       border-bottom: 1px solid $primary-500;
