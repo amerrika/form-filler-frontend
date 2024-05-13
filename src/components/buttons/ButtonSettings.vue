@@ -46,5 +46,4 @@
       </g>
     </svg>
   </button>
-  <!-- For styles look at buttons.scss -->
 </template>

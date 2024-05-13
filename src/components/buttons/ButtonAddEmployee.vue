@@ -3,5 +3,4 @@
     <img src="/icon-add-employee.svg" alt="" />
     <span>Novog zaposlenog</span>
   </router-link>
-  <!-- For styles look at buttons.scss -->
 </template>
