@@ -84,3 +84,7 @@
   width: $size;
   height: $size;
 }
+
+@mixin border-bottom($width: 1px, $style: solid, $color) {
+  border-bottom: $width $style $color;
+}
