@@ -10,26 +10,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid $neutral-400;
+    @include border-bottom($color: $neutral-400);
   }
   // Element
   &__btn-toggle {
     @extend %btn-center;
-    height: 2.5rem;
-    width: 2.5rem;
+    @include size-equal(2.5rem);
     background: url($icon-left);
     // Modifier
-    &-minimized {
+    &_minimized {
       @extend .main-header__btn-toggle;
       background: url($icon-right);
     }
   }
-
   /*-------------------- 
   Following styles are for
   minimized MainHeader
   ---------------------*/
-
   &.minimized {
     width: 10rem;
     // Element
