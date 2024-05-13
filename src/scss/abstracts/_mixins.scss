@@ -56,7 +56,6 @@
   }
 }
 
-
 // Focus
 @mixin focus($color: black, $style: dotted) {
   @include mq(small) {
@@ -79,4 +78,9 @@
       text-underline-offset: 5px;
     }
   }
+}
+
+@mixin size-equal($size) {
+  width: $size;
+  height: $size;
 }
