@@ -1,5 +1,10 @@
 @use "../abstracts/" as *;
 
+// Placeholders
+%collections-list-icon {
+  @include size-equal(2.4rem);
+}
+
 // Block
 .collections-list {
   box-shadow: $box-shadow-card;
@@ -20,28 +25,27 @@
   }
   // Element
   &__icon {
-    width: 2.4rem;
-    height: 2.4rem;
+    @extend %collections-list-icon;
     // Modifier
     &_company {
-      @extend .collections-list__icon;
+      @extend %collections-list-icon;
       background: url($icon-company);
     }
     &_employees {
-      @extend .collections-list__icon;
+      @extend %collections-list-icon;
       background: url($icon-employees);
     }
   }
   // Element
   &__row {
-    border-bottom: 1px solid $primary-600;
+    @include border-bottom($color: $primary-600);
     &:hover {
       background-color: $primary-500;
       border-radius: 1rem;
     }
     /* Select the row before the hovered one */
     &:has(+ &:hover) {
-      border-bottom: 1px solid transparent;
+      @include border-bottom($color: transparent);
     }
   }
 }
