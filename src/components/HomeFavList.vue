@@ -1,11 +1,10 @@
 <template>
-  <!-- For styles look at home-fav.scss -->
   <div class="home-fav br-10">
-    <div class="home-fav__header pi-4 pb-2">
+    <div class="home-fav__header pi-4 pb-2 bg-primary-500">
       <h3 class="fs-500 fw-500 txt-neutral-600">{{ title }}</h3>
       <ButtonSettings />
     </div>
-    <ul class="home-fav__menu p-3">
+    <ul class="home-fav__menu p-3 bg-neutral-100">
       <li role="button" class="home-fav__item fs-300 p-2" v-for="item in list">
         {{ item.title }}
       </li>
