@@ -11,7 +11,6 @@
     justify-content: space-between;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    border-bottom: 1px solid $neutral-400;
   }
   // Element
   &__menu {
@@ -23,7 +22,7 @@
     cursor: pointer;
     /* remove border-bottom for last items */
     &:where(:not(:last-child)) {
-      border-bottom: 1px solid $primary-500;
+      @include border-bottom($color: $primary-500);
     }
     &:hover {
       background-color: $primary-500;
@@ -31,7 +30,7 @@
     }
     /* Select the item before the hovered one */
     &:has(+ &:hover) {
-      border-bottom: 1px solid transparent;
+      @include border-bottom($color: transparent);
     }
   }
 }

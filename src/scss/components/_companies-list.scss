@@ -19,14 +19,14 @@
   }
   // Element
   &__row {
-    border-bottom: 1px solid $primary-600;
+    @include border-bottom($color: $primary-600);
     &:hover {
       background-color: $primary-500;
       border-radius: 1rem;
     }
     /* Select the row before the hovered one */
     &:has(+ &:hover) {
-      border-bottom: 1px solid $neutral-100;
+      @include border-bottom($color: $neutral-100);
     }
   }
 }
