@@ -1,6 +1,6 @@
 @use "../abstracts/" as *;
 
-// styles to be shared
+// Sass placeholders
 %primary-shared {
   background-color: $primary-100;
   box-shadow: $box-shadow-card;
@@ -10,21 +10,49 @@
   min-width: 12rem;
   padding: 1rem;
 }
+%filter {
+  position: relative;
+}
+%filter-toggle {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border: none;
+}
+%filter-menu {
+  position: absolute;
+  top: 125%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+%filter-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+%filter-option {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
 
 // Block
 .filter {
-  position: relative;
+  @extend %filter;
+  // Modifier
+  &_primary {
+    @extend %filter;
+  }
   // Element
   &__btn-toggle {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
-    border: none;
+    @extend %filter-toggle;
 
     // Modifier
     &_primary {
-      @extend .filter__btn-toggle;
+      @extend %filter-toggle;
       @extend %primary-shared;
       font-weight: $fw-500;
       &:hover {
@@ -35,33 +63,25 @@
   // Element
   &__arrow {
     @extend %btn;
-    width: 2rem;
-    height: 2rem;
+    @include size-equal(2rem);
     background: url($icon-arrow-down);
     background-position: center;
   }
   // Element
   &__menu {
-    position: absolute;
-    top: 125%;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    @extend %filter-menu;
     // Modifier
     &_primary {
-      @extend .filter__menu;
+      @extend %filter-menu;
       @extend %primary-shared;
     }
   }
   // Element
   &__submenu {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    @extend %filter-submenu;
     // Modifier
     &_primary {
-      @extend .filter__submenu;
+      @extend %filter-submenu;
     }
     // Element
     &-title {
@@ -72,11 +92,9 @@
   }
   // Element
   &__option {
-    cursor: pointer;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+    @extend %filter-option;
     &_primary {
-      @extend .filter__option;
+      @extend %filter-option;
       &[aria-selected="true"] {
         background-color: $primary-500;
       }
@@ -84,9 +102,5 @@
     &:hover {
       background-color: $primary-500;
     }
-  }
-  // Modifier
-  &_primary {
-    @extend .filter;
   }
 }
