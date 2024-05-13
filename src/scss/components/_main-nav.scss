@@ -18,7 +18,6 @@
   }
   // Element
   &__icon {
-    height: 18px;
-    width: 18px;
+    @include size-equal(18px);
   }
 }
