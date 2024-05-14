@@ -2,11 +2,9 @@
   <div :class="['filter_' + getTheme]" role="listbox">
     <button
       :class="['filter__btn-toggle_' + getTheme]"
-      ref="selectButton"
-      aria-label="Filter companies"
       @click="toggleData(this, 'isMenuOpen')"
     >
-      <span>Filtriraj kompanije</span>
+      {{ btnText }}
       <div class="filter__arrow"></div>
     </button>
     <Transition v-show="isMenuOpen">
@@ -32,7 +30,7 @@
               :class="['filter__option_' + getTheme]"
               @click="handleMakingSelection(option, group)"
             >
-              {{ option.option }}
+              {{ option.name }}
             </li>
           </ul>
         </li>
@@ -48,6 +46,10 @@ export default {
       type: String,
       default: "primary",
     },
+    btnText: {
+      type: String,
+      default: "Button text",
+    },
     filterData: {
       type: Object,
     },
@@ -58,7 +60,7 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-      filterOptions: [
+      allFilterOptions: [
         ...this.filterData.group1.options,
         ...this.filterData.group2.options,
       ],
@@ -83,7 +85,7 @@ export default {
   },
   computed: {
     getSelectedOptions() {
-      return this.filterOptions.filter((option) => option.isSelected);
+      return this.allFilterOptions.filter((option) => option.isSelected);
     },
     getTheme() {
       return this.propTheme;
