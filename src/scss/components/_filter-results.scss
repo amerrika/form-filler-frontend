@@ -1,6 +1,6 @@
 @use "../abstracts/" as *;
 
-// Sass placeholders
+// Placeholders
 %primary-shared {
   background-color: $primary-100;
   box-shadow: $box-shadow-card;
@@ -17,6 +17,7 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 0.5rem;
   border: none;
 }
@@ -62,10 +63,7 @@
   }
   // Element
   &__arrow {
-    @extend %btn;
-    @include size-equal(2rem);
-    background: url($icon-arrow-down);
-    background-position: center;
+    @extend %arrow-down;
   }
   // Element
   &__menu {
@@ -93,14 +91,15 @@
   // Element
   &__option {
     @extend %filter-option;
+    // Modifier
     &_primary {
       @extend %filter-option;
       &[aria-selected="true"] {
         background-color: $primary-500;
       }
-    }
-    &:hover {
-      background-color: $primary-500;
+      &:hover {
+        background-color: $primary-500;
+      }
     }
   }
 }
