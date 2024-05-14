@@ -1,4 +1,9 @@
 # Form-Filler Frontend
+## Main Features
+- **Add**: Add new companies and employees to the database
+- **Edit**: Edit existing companies and employees
+- **Fill Forms**: Fill different forms with data from the database
+- **Print & Send Forms**: Print filled forms or send via email in PDF
 
 ## Technical Stack
 - Language: JavaScript
