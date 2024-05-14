@@ -1,5 +1,6 @@
 @use "./mixins" as *;
 @use "./colors" as *;
+@use "./svg-icons" as *;
 
 %btn {
   border: none;
@@ -26,4 +27,11 @@
     align-items: center;
     gap: 1rem;
   }
+}
+
+%arrow-down {
+  @extend %btn;
+  @include size-equal(2rem);
+  background: url($icon-arrow-down);
+  background-position: center;
 }
