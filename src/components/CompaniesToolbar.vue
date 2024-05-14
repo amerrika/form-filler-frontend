@@ -4,6 +4,7 @@
     <div>Search by</div>
     <FilterResults
       :filter-data="filterData"
+      btn-text="Filtriraj kompanije"
       @selected-options="updateSelectedFilterOptions"
     />
     <ButtonAddCompany />
@@ -27,19 +28,19 @@ export default {
           options: [
             {
               id: "1.1",
-              option: "Cazin",
+              name: "Cazin",
               value: 77220,
               isSelected: false,
             },
             {
               id: "1.2",
-              option: "Bihać",
+              name: "Bihać",
               value: 77000,
               isSelected: false,
             },
             {
               id: "1.3",
-              option: "Bužim",
+              name: "Bužim",
               value: 77000,
               isSelected: false,
             },
@@ -51,13 +52,13 @@ export default {
           options: [
             {
               id: "2.1",
-              option: "DA",
+              name: "DA",
               value: "da",
               isSelected: false,
             },
             {
               id: "2.2",
-              option: "NE",
+              name: "NE",
               value: "ne",
               isSelected: false,
             },
