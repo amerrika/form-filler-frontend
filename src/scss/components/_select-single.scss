@@ -1,0 +1,85 @@
+@use "../abstracts/" as *;
+
+// Placeholders
+%primary-shared {
+  background-color: $primary-100;
+  box-shadow: $box-shadow-card;
+  color: $neutral-800;
+  border-radius: 0.5rem;
+  font-size: $fs-200;
+  min-width: 12rem;
+  padding: 1rem;
+}
+%select-single {
+  position: relative;
+}
+%select-single-toggle {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+}
+%select-single-menu {
+  position: absolute;
+  top: 125%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+%select-single-option {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+// Block
+.select-single {
+  @extend %select-single;
+  // Modifier
+  &_primary {
+    @extend %select-single;
+  }
+  // Element
+  &__btn-toggle {
+    @extend %select-single-toggle;
+    // Modifier
+    &_primary {
+      @extend %select-single-toggle;
+      @extend %primary-shared;
+      font-weight: $fw-500;
+      &:hover {
+        background-color: $primary-500;
+      }
+    }
+  }
+  // Element
+  &__arrow {
+    @extend %arrow-down;
+  }
+  // Element
+  &__menu {
+    @extend %select-single-menu;
+    // Modifier
+    &_primary {
+      @extend %select-single-menu;
+      @extend %primary-shared;
+    }
+  }
+  // Element
+  &__option {
+    @extend %select-single-option;
+    // Modifier
+    &_primary {
+      @extend %select-single-option;
+      &[aria-selected="true"] {
+        background-color: $primary-500;
+      }
+      &:hover {
+        background-color: $primary-500;
+      }
+    }
+  }
+}
