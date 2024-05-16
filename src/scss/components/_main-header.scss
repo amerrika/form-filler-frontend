@@ -4,9 +4,11 @@
 .main-header {
   background-color: $primary-500;
   height: 100vh;
-  width: clamp(15rem, 25vw, 30rem);
+  width: clamp(15rem, 25vw, 25rem);
+  transition: all 0.3s ease;
   // Element
   &__top {
+    height: 6.1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,6 +24,10 @@
       @extend .main-header__btn-toggle;
       background: url($icon-right);
     }
+  }
+  // Element
+  &__logo {
+    @include size-equal(3rem);
   }
   /*-------------------- 
   Following styles are for
