@@ -16,7 +16,7 @@
     <div class="home-fav br-10">
       <div class="home-fav__header pi-4 pb-2 bg-primary-500">
         <h3 class="fs-500 fw-500 txt-neutral-600">
-          Pretražiti - Search Inputs
+          Pretražiti bazu
         </h3>
       </div>
       <ul class="home-fav__menu p-3 bg-neutral-100">
