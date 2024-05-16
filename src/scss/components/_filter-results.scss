@@ -1,15 +1,6 @@
 @use "../abstracts/" as *;
 
 // Placeholders
-%primary-shared {
-  background-color: $primary-100;
-  box-shadow: $box-shadow-card;
-  color: $neutral-800;
-  border-radius: 0.5rem;
-  font-size: $fs-200;
-  min-width: 12rem;
-  padding: 1rem;
-}
 %filter {
   position: relative;
 }
@@ -54,7 +45,7 @@
     // Modifier
     &_primary {
       @extend %filter-toggle;
-      @extend %primary-shared;
+      @extend %primary-styles;
       font-weight: $fw-500;
       &:hover {
         background-color: $primary-500;
@@ -71,7 +62,7 @@
     // Modifier
     &_primary {
       @extend %filter-menu;
-      @extend %primary-shared;
+      @extend %primary-styles;
     }
   }
   // Element
