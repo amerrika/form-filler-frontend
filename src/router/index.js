@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import FormsList from "@/views/FormsList.vue";
+import FormsPage from "@/views/FormsPage.vue";
 import CollectionsPage from "@/views/CollectionsPage.vue";
 import CompaniesPage from "@/views/CompaniesPage.vue";
 import EmployeesPage from "@/views/EmployeesPage.vue";
@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: "/forms",
       name: "forms",
-      component: FormsList,
+      component: FormsPage,
     },
     {
       path: "/collections",
