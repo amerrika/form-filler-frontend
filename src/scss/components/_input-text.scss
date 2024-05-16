@@ -1,0 +1,41 @@
+@use "../abstracts/" as *;
+
+// Placeholders
+%label {
+  font-size: $fs-500;
+}
+%message {
+  font-size: $fs-100;
+  color: $alert-red;
+  text-shadow: $text-shadow-100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+// Block
+.input-text {
+  display: flex;
+  gap: 3rem;
+  // Element
+  &__label {
+    @extend %label;
+  }
+  // Element
+  &__message {
+    @extend %message;
+  }
+  // Element
+  &__field-wrapper {
+    @include flex-columns(0.5rem);
+  }
+  // Element
+  &__field {
+    @extend %primary-styles;
+    border: none;
+    @include focus;
+    &[aria-invalid="true"] {
+      box-shadow: $box-shadow-error;
+    }
+  }
+}
