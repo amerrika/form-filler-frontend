@@ -1,5 +1,5 @@
 <template>
-  <PageTitle title="Dodaj novu kompaniju" />
+  <PageTitle title="Dodaj novu kompaniju u bazu" icon-src="/icon-add-company.svg" />
   <SelectSingle
     btn-text="Izaberite opciju"
     :select-options="selectOptions"
