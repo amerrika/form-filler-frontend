@@ -3,10 +3,10 @@
     <PageTitle title="Početna stranica aplikacije" icon-src="/icon-home.png" />
     <!-- Section -->
     <section class="pb-6">
-      <div class="section-title">
-        <h2 class="heading-2">Često korišteni dokumenti</h2>
-        <ButtonInfo />
-      </div>
+      <SectionTitle
+        title="Često korišteni dokumenti"
+        icon-src="/icon-favorite.svg"
+      />
       <div class="even-columns">
         <HomeFavList title="Obrasci" :list="forms" />
         <HomeFavList title="Ugovori" :list="forms" />
@@ -15,10 +15,10 @@
     </section>
     <!-- Section -->
     <section class="pb-end-6">
-      <div class="section-title">
-        <h2 class="heading-2">Često korištene radnje</h2>
-        <ButtonInfo />
-      </div>
+      <SectionTitle
+        title="Često korištene radnje"
+        icon-src="/icon-favorite.svg"
+      />
       <HomeFavActions />
     </section>
   </div>
@@ -28,10 +28,12 @@
 import HomeFavList from "../components/HomeFavList.vue";
 import HomeFavActions from "../components/HomeFavActions.vue";
 import PageTitle from "@/components/PageTitle.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
   components: {
     PageTitle,
+    SectionTitle,
     HomeFavList,
     HomeFavActions,
   },
