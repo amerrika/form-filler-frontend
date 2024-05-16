@@ -1,5 +1,5 @@
 <template>
-    <PageTitle title="Obrasci" icon-src="/icon-form.png" />
+    <PageTitle title="Baza svih obrazaca" icon-src="/icon-form.png" />
 </template>
 
 <script>
