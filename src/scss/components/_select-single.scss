@@ -1,15 +1,6 @@
 @use "../abstracts/" as *;
 
 // Placeholders
-%primary-shared {
-  background-color: $primary-100;
-  box-shadow: $box-shadow-card;
-  color: $neutral-800;
-  border-radius: 0.5rem;
-  font-size: $fs-200;
-  min-width: 12rem;
-  padding: 1rem;
-}
 %select-single {
   position: relative;
 }
@@ -48,11 +39,12 @@
     // Modifier
     &_primary {
       @extend %select-single-toggle;
-      @extend %primary-shared;
+      @extend %primary-styles;
       font-weight: $fw-500;
       &:hover {
         background-color: $primary-500;
       }
+      @include focus;
     }
   }
   // Element
@@ -65,7 +57,7 @@
     // Modifier
     &_primary {
       @extend %select-single-menu;
-      @extend %primary-shared;
+      @extend %primary-styles;
     }
   }
   // Element
