@@ -5,15 +5,18 @@
     :select-options="selectOptions"
     @selected-option="updateSelectedOption"
   />
+  <InputText label="Puna firma" input-id="test-id" />
 </template>
 <script>
 import PageTitle from "@/components/PageTitle.vue";
 import SelectSingle from "@/components/inputs/SelectSingle.vue";
+import InputText from "@/components/inputs/InputText.vue";
 
 export default {
   components: {
     PageTitle,
     SelectSingle,
+    InputText,
   },
   data() {
     return {
@@ -36,7 +39,7 @@ export default {
   },
   methods: {
     updateSelectedOption(data) {
-      console.log(data)
+      console.log(data);
       this.selectedOption = data;
     },
   },
