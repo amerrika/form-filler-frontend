@@ -56,21 +56,18 @@
   }
 }
 
-// Focus
-@mixin focus($color: black, $style: dotted) {
+@mixin focus($color: $neutral-500, $style: solid) {
   @include mq(small) {
     &:focus,
     &:focus-visible {
-      outline: 2px $style $color;
-      outline-offset: max(2px, 0.08em);
+      outline: 3px $style $color;
+      outline-offset: 0px;
     }
     &:focus:not(:focus-visible) {
       outline: 0;
     }
   }
 }
-
-// Hover
 @mixin hover-underline($thickness: 2px) {
   @include mq(medium) {
     &:hover {
@@ -79,12 +76,15 @@
     }
   }
 }
-
 @mixin size-equal($size) {
   width: $size;
   height: $size;
 }
-
 @mixin border-bottom($width: 1px, $style: solid, $color) {
   border-bottom: $width $style $color;
+}
+@mixin flex-columns($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
 }
