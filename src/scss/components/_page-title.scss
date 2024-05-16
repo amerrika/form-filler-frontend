@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+// Block
+.page-title {
+  height: 6.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: $primary-500;
+  padding: 2rem;
+  @include border-bottom($color: $neutral-400);
+  // Element
+  &__icon {
+    @include size-equal(2.5rem);
+  }
+  // Element
+  &__heading {
+    flex-grow: 2;
+  }
+}
