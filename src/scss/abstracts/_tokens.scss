@@ -13,7 +13,7 @@ $grid-gap: 5rem;
 // HEADINGS
 $heading-ff: $ff-base;
 $heading-tt: unset;
-$heading-ls: 0;
+$heading-ls: -0.5px;
 $heading-line-height: 1.1;
 $heading-clr-default: $neutral-900;
 
@@ -22,10 +22,9 @@ $heading-1-fw: $fw-700;
 $heading-1-clr: $heading-clr-default;
 
 $heading-2-fs: $fs-700;
-$heading-2-fw: $fw-500;
+$heading-2-fw: $fw-400;
 $heading-2-clr: $heading-clr-default;
 
 $heading-3-fs: $fs-base;
 $heading-3-fw: $fw-500;
 $heading-3-clr: $heading-clr-default;
-
