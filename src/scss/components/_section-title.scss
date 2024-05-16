@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+// Block
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  @include border-bottom($width: 4px, $color: $primary-500);
+  // Element
+  &__icon {
+    @include size-equal(2.5rem);
+  }
+}
