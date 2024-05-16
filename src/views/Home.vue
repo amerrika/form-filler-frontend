@@ -1,9 +1,6 @@
 <template>
   <div class="home">
-    <div class="page-title">
-      <h1 class="heading-1">Početna stranica aplikacije</h1>
-      <ButtonInfo />
-    </div>
+    <PageTitle title="Početna stranica aplikacije" icon-src="/icon-home.png" />
     <!-- Section -->
     <section class="pb-6">
       <div class="section-title">
@@ -28,13 +25,13 @@
 </template>
 
 <script>
-import ButtonInfo from "../components/buttons/ButtonInfo.vue";
 import HomeFavList from "../components/HomeFavList.vue";
 import HomeFavActions from "../components/HomeFavActions.vue";
+import PageTitle from "@/components/PageTitle.vue";
 
 export default {
   components: {
-    ButtonInfo,
+    PageTitle,
     HomeFavList,
     HomeFavActions,
   },
