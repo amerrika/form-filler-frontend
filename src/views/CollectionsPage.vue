@@ -1,19 +1,16 @@
 <template>
-  <div class="page-title">
-    <h1 class="heading-1">Baza svih kolekcija</h1>
-    <ButtonInfo />
-  </div>
+  <PageTitle title="Baza svih kolekcija" icon-src="/icon-database.png" />
   <CollectionsList :companies-total-count="store.totalCount" />
 </template>
 
 <script>
-import ButtonInfo from "@/components/buttons/ButtonInfo.vue";
+import PageTitle from "@/components/PageTitle.vue";
 import CollectionsList from "@/components/CollectionsList.vue";
 import { useCompaniesStore } from "@/stores/CompaniesStore";
 
 export default {
   components: {
-    ButtonInfo,
+    PageTitle,
     CollectionsList,
   },
   setup() {
