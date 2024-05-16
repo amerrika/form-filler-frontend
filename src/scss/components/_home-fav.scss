@@ -20,6 +20,7 @@
   // Element
   &__item {
     cursor: pointer;
+    color: $neutral-800;
     /* remove border-bottom for last items */
     &:where(:not(:last-child)) {
       @include border-bottom($color: $primary-500);
