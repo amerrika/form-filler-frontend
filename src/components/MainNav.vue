@@ -4,7 +4,7 @@
       <li class="main-nav__item">
         <router-link
           to="/"
-          activeClass="bg-primary-100"
+          activeClass="bg-primary-500"
           class="main-nav__link txt-neutral-800 fs-300 fw-500"
         >
           <img class="main-nav__icon" src="/icon-home.png" alt="" />
@@ -14,7 +14,7 @@
       <li class="main-nav__item">
         <router-link
           to="/forms"
-          activeClass="bg-primary-100"
+          activeClass="bg-primary-500"
           class="main-nav__link txt-neutral-800 fs-300 fw-500"
         >
           <img class="main-nav__icon" src="/icon-form.png" alt="" />
@@ -24,7 +24,7 @@
       <li class="main-nav__item">
         <router-link
           to="/collections"
-          activeClass="bg-primary-100"
+          activeClass="bg-primary-500"
           class="main-nav__link txt-neutral-800 fs-300 fw-500"
         >
           <img class="main-nav__icon" src="/icon-database.png" alt="" />
