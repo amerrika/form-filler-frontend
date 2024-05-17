@@ -2,10 +2,10 @@
 
 // Block
 .main-header {
-  background-color: $primary-500;
   height: 100vh;
   width: clamp(15rem, 25vw, 25rem);
   transition: all 0.3s ease;
+  border-right: 1px solid $neutral-400;
   // Element
   &__top {
     height: 6.1rem;
