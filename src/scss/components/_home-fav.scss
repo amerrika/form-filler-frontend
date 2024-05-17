@@ -23,7 +23,7 @@
     color: $neutral-800;
     /* remove border-bottom for last items */
     &:where(:not(:last-child)) {
-      @include border-bottom($color: $primary-500);
+      @include border-bottom($color: $primary-600);
     }
     &:hover {
       background-color: $primary-500;
