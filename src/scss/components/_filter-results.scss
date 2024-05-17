@@ -33,15 +33,12 @@
 
 // Block
 .filter {
-  @extend %filter;
   // Modifier
   &_primary {
     @extend %filter;
   }
   // Element
   &__btn-toggle {
-    @extend %filter-toggle;
-
     // Modifier
     &_primary {
       @extend %filter-toggle;
@@ -58,7 +55,6 @@
   }
   // Element
   &__menu {
-    @extend %filter-menu;
     // Modifier
     &_primary {
       @extend %filter-menu;
@@ -67,7 +63,6 @@
   }
   // Element
   &__submenu {
-    @extend %filter-submenu;
     // Modifier
     &_primary {
       @extend %filter-submenu;
@@ -81,7 +76,6 @@
   }
   // Element
   &__option {
-    @extend %filter-option;
     // Modifier
     &_primary {
       @extend %filter-option;

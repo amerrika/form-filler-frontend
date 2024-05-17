@@ -28,14 +28,12 @@
 
 // Block
 .select-single {
-  @extend %select-single;
   // Modifier
   &_primary {
     @extend %select-single;
   }
   // Element
   &__btn-toggle {
-    @extend %select-single-toggle;
     // Modifier
     &_primary {
       @extend %select-single-toggle;
@@ -53,7 +51,6 @@
   }
   // Element
   &__menu {
-    @extend %select-single-menu;
     // Modifier
     &_primary {
       @extend %select-single-menu;
@@ -62,7 +59,6 @@
   }
   // Element
   &__option {
-    @extend %select-single-option;
     // Modifier
     &_primary {
       @extend %select-single-option;

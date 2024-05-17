@@ -13,7 +13,6 @@
 
 // Block
 .btn-add {
-  @extend %btn-add;
   // Element
   &__employee,
   &__company {
