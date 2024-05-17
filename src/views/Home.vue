@@ -2,7 +2,7 @@
   <div class="home">
     <PageTitle title="Početna stranica aplikacije" icon-src="/icon-home.png" />
     <!-- Section -->
-    <section class="pb-6">
+    <section class="home__section p-5 br-10 mb-start-5">
       <SectionTitle
         title="Često korišteni dokumenti"
         icon-src="/icon-favorite.svg"
@@ -14,7 +14,7 @@
       </div>
     </section>
     <!-- Section -->
-    <section class="pb-end-6">
+    <section class="home__section p-5 br-10 mb-start-5">
       <SectionTitle
         title="Često korištene radnje"
         icon-src="/icon-favorite.svg"
