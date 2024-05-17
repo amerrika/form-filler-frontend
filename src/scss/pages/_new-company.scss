@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+// Block
+.new-company {
+  // Element
+  &__section {
+    border: 1px solid $neutral-400;
+  }
+}
