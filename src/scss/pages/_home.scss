@@ -6,6 +6,13 @@
 
 main {
   flex-grow: 2;
-  background-color: $primary-100;
   padding-inline: 4rem;
+}
+
+// Block
+.home {
+  // Element
+  &__section {
+    border: 1px solid $neutral-400;
+  }
 }
