@@ -5,8 +5,6 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 2rem;
-  padding: 0 2rem 1rem 2rem;
   @include border-bottom($width: 2px, $color: $primary-500);
   // Element
   &__icon {
