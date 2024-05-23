@@ -44,7 +44,17 @@
   box-shadow: $box-shadow-primary;
   color: $neutral-800;
   border-radius: 0.5rem;
-  font-size: $fs-200;
+  font-size: $fs-100;
   min-width: 12rem;
   padding: 1rem;
+}
+
+%input-message-warning {
+  font-size: $fs-100;
+  color: $alert-red;
+  text-shadow: $text-shadow-100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  display: none;
 }
