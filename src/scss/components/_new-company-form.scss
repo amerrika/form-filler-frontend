@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+// Block
+.new-company-form {
+  border: 1px solid $neutral-400;
+}
+
+// Block or Element
+.form-group {
+  // Modifier
+  &_row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  // Element
+  &__label {
+    font-size: $fs-200;
+  }
+}
