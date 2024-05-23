@@ -3,10 +3,12 @@
 @use "./companies-list";
 @use "./companies-toolbar";
 @use "./home-fav";
+@use "./input-email";
 @use "./input-text";
 @use "./filter-results";
-@use "./main-nav.scss";
 @use "./main-header.scss";
+@use "./main-nav.scss";
+@use "./new-company-form";
 @use "./page-title";
 @use "./section-title";
 @use "./select-single";
