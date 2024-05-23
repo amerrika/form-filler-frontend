@@ -1,6 +1,8 @@
 <template>
-  <div class="section-title">
-    <img :src="iconSrc" class="section-title__icon" alt="" />
+  <div class="section-title pb-end-2 mb-end-4">
+    <div class="bg-primary-500 p-2 br-50">
+      <img :src="iconSrc" class="section-title__icon" alt="" />
+    </div>
     <h2 class="section-title__heading heading-2">{{ title }}</h2>
   </div>
 </template>
