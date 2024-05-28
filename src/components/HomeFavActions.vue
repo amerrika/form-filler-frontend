@@ -29,6 +29,7 @@
 <script>
 import ButtonAddEmployee from "./buttons/ButtonAddEmployee.vue";
 import ButtonAddCompany from "./buttons/ButtonAddCompany.vue";
+
 export default {
   components: {
     ButtonAddEmployee,
