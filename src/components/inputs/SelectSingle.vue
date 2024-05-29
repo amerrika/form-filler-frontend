@@ -88,6 +88,8 @@ export default {
       objName[propString] = !objName[propString];
     },
     handleMakingSelection(clickedOption) {
+      // toggle isMenuOpen
+      this.toggleData(this, "isMenuOpen");
       // toggle isSelected of the clicked option
       this.toggleData(clickedOption, "isSelected");
       // only single selected option is possible
