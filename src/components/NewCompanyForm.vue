@@ -26,7 +26,8 @@
             <SelectSingle
               select-single-id="oblik-drustva"
               btn-text="Izaberi opciju"
-              :select-options="companyTypeOptions"
+              :select-options="selectOptions.companyType"
+              @selected-option="userOption"
             />
           </div>
         </div>
@@ -51,7 +52,8 @@
             <SelectSingle
               select-single-id="pdv-obveznik"
               btn-text="Izaberi opciju"
-              :select-options="isTaxPayerOptions"
+              :select-options="selectOptions.isTaxpayer"
+              @selected-option="userOption"
             />
           </div>
         </div>
@@ -78,7 +80,8 @@
             <SelectSingle
               select-single-id="sjediste"
               btn-text="Izaberi opciju"
-              :select-options="cityOptions"
+              :select-options="selectOptions.city"
+              @selected-option="userOption"
             />
           </div>
         </div>
@@ -140,45 +143,51 @@ export default {
   },
   data() {
     return {
-      isTaxPayerOptions: [
-        {
-          id: "1",
-          name: "Da",
-          value: "da",
-        },
-        {
-          id: "2",
-          name: "Ne",
-          value: "ne",
-        },
-      ],
-      companyTypeOptions: [
-        {
-          name: "Društvo sa ograničenom odgovornošću",
-          value: "doo",
-        },
-        {
-          name: "Obrt",
-          value: "obrt",
-        },
-      ],
-      cityOptions: [
-        {
-          name: "Bihać",
-          value: 77000,
-        },
-        {
-          name: "Cazin",
-          value: 77220,
-        },
-      ],
-      selectedOption: null,
+      // prop data for select components
+      selectOptions: {
+        isTaxpayer: [
+          {
+            name: "Da",
+            value: "da",
+            isSelected: false,
+          },
+          {
+            name: "Ne",
+            value: "ne",
+            isSelected: false,
+          },
+        ],
+        companyType: [
+          {
+            name: "Društvo sa ograničenom odgovornošću",
+            value: "doo",
+            isSelected: false,
+          },
+          {
+            name: "Obrt",
+            value: "obrt",
+            isSelected: false,
+          },
+        ],
+        city: [
+          {
+            name: "Bihać",
+            value: 77000,
+            isSelected: false,
+          },
+          {
+            name: "Cazin",
+            value: 77220,
+            isSelected: false,
+          },
+        ],
+      },
+      byUserSelectedOptions: [],
     };
   },
   methods: {
-    updateSelectedOption(data) {
-      console.log(data);
-      this.selectedOption = data;
+    userOption(data) {
+      console.log("NewCompanyForm", data)
     },
   },
 };
