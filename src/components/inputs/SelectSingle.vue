@@ -81,7 +81,6 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-      selectedOption: false,
     };
   },
   methods: {
@@ -91,16 +90,27 @@ export default {
     handleMakingSelection(clickedOption) {
       // toggle isSelected of the clicked option
       this.toggleData(clickedOption, "isSelected");
-      // save clicked option
-      this.selectedOption = clickedOption;
+      // only single selected option is possible
       // set other options as unselect
       this.selectOptions.forEach((option) => {
         if (option !== clickedOption) {
           option.isSelected = false;
         }
       });
-      // emit selected option
-      this.$emit("selectedOption", this.selectedOption);
+      // emit the selected option
+      if (this.selectedOption !== undefined) {
+        this.$emit("selectedOption", this.selectedOption);
+      } else {
+        return;
+      }
+    },
+  },
+  computed: {
+    selectedOption() {
+      // filter returns array
+      const filteredOptions = this.selectOptions.filter((o) => o.isSelected);
+      // we only get a single option
+      return filteredOptions[0];
     },
   },
 };
