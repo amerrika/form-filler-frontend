@@ -31,10 +31,20 @@
 
 // Block
 .select-single {
-  // Modifier
-  &_primary {
-    @extend %select-single;
-    width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  // Element
+  &__label {
+    font-size: $fs-200;
+  }
+  // Element
+  &__listbox {
+    // Modifier
+    &_primary {
+      @extend %select-single;
+      width: 30rem;
+    }
   }
   // Element
   &__btn-toggle {
@@ -54,7 +64,7 @@
     @extend %arrow-down;
   }
   // Element
-  &__menu {
+  &__list-container {
     // Modifier
     &_primary {
       @extend %select-single-menu;
@@ -75,7 +85,7 @@
     }
   }
   // Element
-  &__message {
+  &__error {
     @extend %input-message-warning;
   }
 }
