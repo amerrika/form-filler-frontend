@@ -1,194 +1,164 @@
 <template>
   <div class="new-company-form p-5 br-10 mb-start-5">
     <div class="even-columns g-10">
-      <!-- Group of Inputs-->
-      <div class="new-company-form__group">
+      <!-- Grouping of Inputs-->
+      <div>
         <SectionTitle title="Podaci o firmi" iconSrc="/icon-company-card.png" />
-        <div class="new-company-form__input mb-end-4">
-          <div class="form-group_row">
-            <label for="puna-firma" class="form-group__label">Puna firma</label>
-            <InputText input-id="puna-firma" />
-          </div>
-        </div>
-        <div class="new-company-form__group mb-end-4">
-          <div class="form-group_row">
-            <label for="skracena-firma" class="form-group__label"
-              >Skraćena firma</label
-            >
-            <InputText input-id="skracena-firma" />
-          </div>
-        </div>
-        <div class="new-company-form__input">
-          <div class="form-group_row">
-            <label class="form-group__label" for="oblik-drustva"
-              >Oblik društva</label
-            >
-            <SelectSingle
-              select-single-id="oblik-drustva"
-              btn-text="Izaberi opciju"
-              :select-options="selectOptions.companyType"
-              @selected-option="userOption"
-            />
-          </div>
-        </div>
+        <FormGroup
+          class="mb-end-4"
+          type="text"
+          id="punafirma"
+          label="Puna firma"
+          v-model="newCompany.companyFullName"
+        />
+        <FormGroup
+          class="mb-end-4"
+          type="text"
+          id="skracenafirma"
+          label="Skraćena firma"
+          v-model="newCompany.companyShortName"
+        />
+        <SelectSingle
+          id="vrstakompanije"
+          label="Vrsta kompanije"
+          btn-text="Izaberi opciju"
+          :select-options="companyStore.selectOptions.companyType"
+          @selected-option="getUserSelection($event, 'companyType')"
+        />
       </div>
-      <!-- Group of Inputs-->
-      <div class="new-company-form__group">
+      <!-- Grouping of Inputs-->
+      <div>
         <SectionTitle
           title="Identifikacioni podaci"
           iconSrc="/icon-company-id.svg"
         />
-        <div class="new-company-form__input mb-end-4">
-          <div class="form-group_row">
-            <label for="id-broj" class="form-group__label">ID broj</label>
-            <InputText input-id="id-broj" />
-          </div>
-        </div>
-        <div class="new-company-form__input mb-end-4">
-          <div class="form-group_row">
-            <label for="pdv-obveznik" class="form-group__label"
-              >Da li je PDV obveznik?</label
-            >
-            <SelectSingle
-              select-single-id="pdv-obveznik"
-              btn-text="Izaberi opciju"
-              :select-options="selectOptions.isTaxpayer"
-              @selected-option="userOption"
-            />
-          </div>
-        </div>
-        <div class="new-company-form__input">
-          <div class="form-group_row">
-            <label for="pdv-broj" class="form-group__label">PDV broj</label>
-            <InputText input-id="pdv-broj" />
-          </div>
-        </div>
+        <FormGroup
+          class="mb-end-4"
+          type="text"
+          id="idbrojkompanije"
+          label="ID broj"
+          v-model="newCompany.companyID"
+        />
+        <SelectSingle
+          class="mb-end-4"
+          id="pdvobveznik"
+          label="Da li je PDV obveznik?"
+          btn-text="Izaberi opciju"
+          :select-options="companyStore.selectOptions.isTaxpayer"
+          @selected-option="getUserSelection($event, 'companyIsTaxpayer')"
+        />
+        <FormGroup
+          type="text"
+          id="pdvbrojkompanije"
+          label="PDV broj"
+          v-model="newCompany.companyTaxID"
+        />
       </div>
     </div>
     <div class="even-columns mb-start-4 g-10">
-      <!-- Group of Inputs-->
-      <div class="new-company-form__group">
+      <!-- Grouping of Inputs-->
+      <div>
         <SectionTitle
           title="Sjedište i adresa kompanije"
           iconSrc="/icon-office.svg"
         />
-        <div class="new-company-form__input mb-end-4">
-          <div class="form-group_row mb-end-4">
-            <label for="sjedište" class="form-group__label"
-              >Mjesto sjedišta</label
-            >
-            <SelectSingle
-              select-single-id="sjediste"
-              btn-text="Izaberi opciju"
-              :select-options="selectOptions.city"
-              @selected-option="userOption"
-            />
-          </div>
-        </div>
-        <div class="new-company-form__input mb-end-4">
-          <div class="form-group_row">
-            <label for="ulica" class="form-group__label">Naziv ulice</label>
-            <InputText input-id="ulica" />
-          </div>
-        </div>
-        <div class="new-company-form__input">
-          <div class="form-group_row">
-            <label for="broj-ulice" class="form-group__label">Broj ulice</label>
-            <InputText input-id="broj-ulice" />
-          </div>
-        </div>
+        <SelectSingle
+          class="mb-end-4"
+          id="sjedistekompanije"
+          label="Mjesto sjedišta"
+          btn-text="Izaberi opciju"
+          :select-options="companyStore.selectOptions.city"
+          @selected-option="getUserSelection($event, 'city')"
+        />
+        <FormGroup
+          class="mb-end-4"
+          type="text"
+          id="ulicakompanije"
+          label="Naziv ulice"
+          v-model="newCompany.street"
+        />
+        <FormGroup
+          type="text"
+          id="brojulicekompanije"
+          label="Broj ulice"
+          v-model="newCompany.streetNumber"
+        />
       </div>
-      <!-- Group of Inputs-->
-      <div class="new-company-form__group">
+      <!-- Grouping of Inputs-->
+      <div>
         <SectionTitle
           title="Kontakt podaci"
           iconSrc="/icon-company-contact.svg"
         />
-        <div class="new-company-form__input mb-end-4">
-          <div class="form-group_row">
-            <label for="direktor" class="form-group__label"
-              >Direktor / ovlaštena osoba</label
-            >
-            <InputText input-id="direktor" />
-          </div>
-        </div>
-        <div class="new-company-form__input mb-end-4">
-          <div class="form-group_row mb-end-4">
-            <label for="telefon" class="form-group__label">Broj telefona</label>
-            <InputText input-id="telefon" />
-          </div>
-        </div>
-        <div class="new-company-form__input">
-          <div class="form-group_row">
-            <label for="email" class="form-group__label">Email adresa</label>
-            <InputEmail input-id="email" />
-          </div>
-        </div>
+        <FormGroup
+          class="mb-end-4"
+          type="text"
+          id="direktor"
+          label="Direktor / ovlaštena osoba"
+          v-model="newCompany.companyDirector"
+        />
+        <FormGroup
+          class="mb-end-4"
+          type="tel"
+          id="telefonkompanije"
+          label="Broj telefona"
+          v-model="newCompany.phone"
+        />
+        <FormGroup
+          type="email"
+          id="emailkompanije"
+          label="Email"
+          v-model="newCompany.email"
+        />
       </div>
     </div>
   </div>
 </template>
 <script>
+// Vue Components
 import SectionTitle from "./SectionTitle.vue";
-import InputText from "@/components/inputs/InputText.vue";
 import SelectSingle from "@/components/inputs/SelectSingle.vue";
-import InputEmail from "@/components/inputs/InputEmail.vue";
+import FormGroup from "@/components/inputs/FormGroup.vue";
+// Pinia Store (used without setup function)
+import { useCompanyStore } from "@/stores/companyStore";
+import { mapStores, setMapStoreSuffix } from "pinia";
+setMapStoreSuffix("");
 
 export default {
   components: {
-    InputText,
-    InputEmail,
     SelectSingle,
     SectionTitle,
+    FormGroup,
   },
   data() {
     return {
-      // prop data for select components
-      selectOptions: {
-        isTaxpayer: [
-          {
-            name: "Da",
-            value: "da",
-            isSelected: false,
-          },
-          {
-            name: "Ne",
-            value: "ne",
-            isSelected: false,
-          },
-        ],
-        companyType: [
-          {
-            name: "Društvo sa ograničenom odgovornošću",
-            value: "doo",
-            isSelected: false,
-          },
-          {
-            name: "Obrt",
-            value: "obrt",
-            isSelected: false,
-          },
-        ],
-        city: [
-          {
-            name: "Bihać",
-            value: 77000,
-            isSelected: false,
-          },
-          {
-            name: "Cazin",
-            value: 77220,
-            isSelected: false,
-          },
-        ],
+      // data provided by a user 
+      // for creating a new company
+      newCompany: {
+        companyID: "",
+        companyIsTaxPayer: "",
+        companyTaxID: "",
+        companyFullName: "",
+        companyShortName: "",
+        companyType: "",
+        companyDirector: "",
+        city: "",
+        street: "",
+        streetNumber: "",
+        phone: "",
+        email: "",
       },
-      byUserSelectedOptions: [],
     };
   },
   methods: {
-    userOption(data) {
-      console.log("NewCompanyForm", data)
+    getUserSelection(data, propToUpdate) {
+      this.newCompany[propToUpdate] = data.value;
+      console.log(this.newCompany);
     },
+  },
+  computed: {
+    // using Pinia without setup function
+    ...mapStores(useCompanyStore),
   },
 };
 </script>
