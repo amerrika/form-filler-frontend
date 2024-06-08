@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+
+// Block
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  // Element
+  &__label {
+    font-size: $fs-200;
+  }
+  // Element
+  &__input {
+    width: 30rem;
+    border: none;
+    @extend %primary-styles;
+    @include focus;
+    &[aria-invalid="true"] {
+      box-shadow: $box-shadow-error;
+    }
+  }
+  // Element
+  &__error {
+    @extend %input-message-warning;
+    display: none;
+  }
+}
