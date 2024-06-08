@@ -4,13 +4,18 @@
     <ButtonInfo />
   </div>
   <CompaniesToolbar />
-  <CompaniesList :companies="store.companies" />
+  <CompaniesList :companies="companyStore.companies" />
 </template>
+
 <script>
+// Vue Components
 import ButtonInfo from "@/components/buttons/ButtonInfo.vue";
 import CompaniesToolbar from "@/components/CompaniesToolbar.vue";
 import CompaniesList from "@/components/CompaniesList.vue";
-import { useCompaniesStore } from "@/stores/CompaniesStore";
+// Pinia Store (used without setup function)
+import { useCompanyStore } from "@/stores/companyStore";
+import { mapStores, setMapStoreSuffix } from "pinia";
+setMapStoreSuffix("");
 
 export default {
   components: {
@@ -18,11 +23,9 @@ export default {
     CompaniesToolbar,
     CompaniesList,
   },
-  setup() {
-    // access the store
-    const store = useCompaniesStore();
-
-    return { store };
+  computed: {
+    // using Pinia without setup function
+    ...mapStores(useCompanyStore),
   },
 };
 </script>
