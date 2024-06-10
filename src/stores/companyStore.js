@@ -15,12 +15,12 @@ export const useCompanyStore = defineStore("companyStore", {
       isTaxpayer: [
         {
           name: "Da",
-          value: "da",
+          value: true,
           isSelected: false,
         },
         {
           name: "Ne",
-          value: "ne",
+          value: false,
           isSelected: false,
         },
       ],
@@ -39,12 +39,12 @@ export const useCompanyStore = defineStore("companyStore", {
       city: [
         {
           name: "Bihać",
-          value: 77000,
+          value: "bihać",
           isSelected: false,
         },
         {
           name: "Cazin",
-          value: 77220,
+          value: "cazin",
           isSelected: false,
         },
       ],
@@ -63,6 +63,18 @@ export const useCompanyStore = defineStore("companyStore", {
 
       this.companies = data;
       this.isLoading = false;
+    },
+    async saveCompany(company) {
+      console.log("saveCompany is called")
+      const res = await fetch("http://localhost:3030/api/companies", {
+        method: "POST",
+        body: JSON.stringify(company),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (res.error) {
+        console.log(res.error);
+      }
     },
   },
 });
