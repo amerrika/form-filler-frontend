@@ -1,5 +1,8 @@
 <template>
-  <div class="new-company-form p-5 br-10 mb-start-5">
+  <form
+    class="new-company-form p-5 br-10 mb-start-5"
+    @submit.prevent="handleSubmit"
+  >
     <div class="even-columns g-10">
       <!-- Grouping of Inputs-->
       <div>
@@ -37,7 +40,7 @@
           type="text"
           id="idbrojkompanije"
           label="ID broj"
-          v-model="newCompany.companyID"
+          v-model="newCompany.companyId"
         />
         <SelectSingle
           class="mb-end-4"
@@ -51,7 +54,7 @@
           type="text"
           id="pdvbrojkompanije"
           label="PDV broj"
-          v-model="newCompany.companyTaxID"
+          v-model="newCompany.companyTaxId"
         />
       </div>
     </div>
@@ -68,20 +71,20 @@
           label="Mjesto sjedišta"
           btn-text="Izaberi opciju"
           :select-options="companyStore.selectOptions.city"
-          @selected-option="getUserSelection($event, 'city')"
+          @selected-option="getUserSelection($event, 'city', 'companyOffice')"
         />
         <FormGroup
           class="mb-end-4"
           type="text"
           id="ulicakompanije"
           label="Naziv ulice"
-          v-model="newCompany.street"
+          v-model="newCompany.companyOffice.street"
         />
         <FormGroup
           type="text"
           id="brojulicekompanije"
           label="Broj ulice"
-          v-model="newCompany.streetNumber"
+          v-model="newCompany.companyOffice.streetNumber"
         />
       </div>
       <!-- Grouping of Inputs-->
@@ -102,17 +105,20 @@
           type="tel"
           id="telefonkompanije"
           label="Broj telefona"
-          v-model="newCompany.phone"
+          v-model="newCompany.companyContact.phone"
         />
         <FormGroup
           type="email"
           id="emailkompanije"
           label="Email"
-          v-model="newCompany.email"
+          v-model="newCompany.companyContact.email"
         />
       </div>
     </div>
-  </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
 </template>
 <script>
 // Vue Components
@@ -132,28 +138,38 @@ export default {
   },
   data() {
     return {
-      // data provided by a user 
+      // data provided by a user
       // for creating a new company
       newCompany: {
-        companyID: "",
-        companyIsTaxPayer: "",
-        companyTaxID: "",
+        companyId: "",
+        companyIsTaxpayer: "",
+        companyTaxId: "",
         companyFullName: "",
         companyShortName: "",
         companyType: "",
         companyDirector: "",
-        city: "",
-        street: "",
-        streetNumber: "",
-        phone: "",
-        email: "",
+        companyOffice: {
+          city: "",
+          street: "",
+          streetNumber: "",
+        },
+        companyContact: {
+          phone: "",
+          email: "",
+        },
       },
     };
   },
   methods: {
-    getUserSelection(data, propToUpdate) {
-      this.newCompany[propToUpdate] = data.value;
-      console.log(this.newCompany);
+    getUserSelection(data, propToUpdate, groupToUpdate = null) {
+      if (!groupToUpdate) {
+        this.newCompany[propToUpdate] = data.value;
+      } else {
+        this.newCompany[groupToUpdate][propToUpdate] = data.value;
+      }
+    },
+    handleSubmit() {
+      this.companyStore.saveCompany(this.newCompany);
     },
   },
   computed: {
