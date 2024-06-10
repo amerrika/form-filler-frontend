@@ -1,13 +1,13 @@
 <template>
   <div class="select-single">
     <label class="select-single__label" :for="id">{{ label }}</label>
-
     <div
       :id="id"
       :class="['select-single__listbox_' + propTheme]"
       role="listbox"
     >
       <button
+        type="button"
         :class="['select-single__btn-toggle_' + propTheme]"
         @click="toggleData(this, 'isMenuOpen')"
       >
