@@ -69,7 +69,7 @@
         />
       </div>
     </div>
-    <div class="even-columns mb-start-4 g-10">
+    <div class="even-columns mb-4 g-10">
       <!-- Grouping of Inputs-->
       <div>
         <SectionTitle
@@ -139,7 +139,12 @@
       </div>
     </div>
     <div>
-      <button type="submit">Submit</button>
+      <button
+        class="new-company-form__btn-submit p-2 fs-500 fw-500 bg-primary-blue br-10 txt-neutral-100"
+        type="submit"
+      >
+        Sačuvaj kompaniju
+      </button>
     </div>
   </form>
 </template>
@@ -313,11 +318,12 @@ export default {
       // Validate phone
       if (
         !this.newCompany.companyContact.phone.trim() ||
-        !/^\+?\d{1,4}([-.\s]?\d{1,3}){2,3}$/.test(this.newCompany.companyContact.phone)
+        !/^\+?\d{1,4}([-.\s]?\d{1,3}){2,3}$/.test(
+          this.newCompany.companyContact.phone
+        )
       ) {
         this.isInvalid.phone = true;
-        this.errorMessages.phone =
-          "Broj telefona je obavezan.";
+        this.errorMessages.phone = "Broj telefona je obavezan.";
       } else {
         this.isInvalid.phone = false;
       }
