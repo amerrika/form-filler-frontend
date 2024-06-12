@@ -3,4 +3,12 @@
 // Block
 .new-company-form {
   border: 1px solid $neutral-400;
+  // Element
+  &__btn-submit {
+    @extend %btn-center;
+    margin-left: auto;
+    &:hover {
+      @include hover-underline($color: $neutral-100)
+    }
+  }
 }
