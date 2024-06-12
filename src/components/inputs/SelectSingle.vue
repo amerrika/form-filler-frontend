@@ -31,7 +31,7 @@
           </li>
         </ul>
       </Transition>
-      <span class="select-single__error mb-start-1">
+      <span v-if="isInvalid" class="select-single__error mb-start-1">
         <svg
           fill="#c60243"
           height="12px"
@@ -61,7 +61,7 @@
             </g>
           </g>
         </svg>
-        <p>Please provide correct data</p>
+        <p>{{ errorMessage }}</p>
       </span>
     </div>
   </div>
@@ -86,6 +86,16 @@ export default {
     },
     label: {
       type: String,
+    },
+    isInvalid: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
+      required: false,
+      default: "This field is required",
     },
   },
   data() {
@@ -113,13 +123,14 @@ export default {
       if (this.selectedOption !== undefined) {
         this.$emit("selectedOption", this.selectedOption);
       } else {
-        return;
+        // if nothing selected, return empty string
+        this.$emit("selectedOption", "");
       }
     },
   },
   computed: {
     selectedOption() {
-      // filter returns array
+      // filter() returns array
       const filteredOptions = this.selectOptions.filter((o) => o.isSelected);
       // we only get a single option
       return filteredOptions[0];
