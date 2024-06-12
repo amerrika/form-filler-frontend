@@ -12,6 +12,8 @@
           type="text"
           id="punafirma"
           label="Puna firma"
+          :is-invalid="isInvalid.fullName"
+          :error-message="errorMessages.fullName"
           v-model="newCompany.companyFullName"
         />
         <FormGroup
@@ -19,12 +21,16 @@
           type="text"
           id="skracenafirma"
           label="Skraćena firma"
+          :is-invalid="isInvalid.shortName"
+          :error-message="errorMessages.shortName"
           v-model="newCompany.companyShortName"
         />
         <SelectSingle
           id="vrstakompanije"
           label="Vrsta kompanije"
           btn-text="Izaberi opciju"
+          :is-invalid="isInvalid.type"
+          :error-message="errorMessages.type"
           :select-options="companyStore.selectOptions.companyType"
           @selected-option="getUserSelection($event, 'companyType')"
         />
@@ -40,6 +46,9 @@
           type="text"
           id="idbrojkompanije"
           label="ID broj"
+          maxlength="13"
+          :is-invalid="isInvalid.id"
+          :error-message="errorMessages.id"
           v-model="newCompany.companyId"
         />
         <SelectSingle
@@ -47,6 +56,8 @@
           id="pdvobveznik"
           label="Da li je PDV obveznik?"
           btn-text="Izaberi opciju"
+          :is-invalid="isInvalid.isTaxpayer"
+          :error-message="errorMessages.isTaxpayer"
           :select-options="companyStore.selectOptions.isTaxpayer"
           @selected-option="getUserSelection($event, 'companyIsTaxpayer')"
         />
@@ -70,6 +81,8 @@
           id="sjedistekompanije"
           label="Mjesto sjedišta"
           btn-text="Izaberi opciju"
+          :is-invalid="isInvalid.city"
+          :error-message="errorMessages.city"
           :select-options="companyStore.selectOptions.city"
           @selected-option="getUserSelection($event, 'city', 'companyOffice')"
         />
@@ -78,12 +91,16 @@
           type="text"
           id="ulicakompanije"
           label="Naziv ulice"
+          :is-invalid="isInvalid.street"
+          :error-message="errorMessages.street"
           v-model="newCompany.companyOffice.street"
         />
         <FormGroup
           type="text"
           id="brojulicekompanije"
           label="Broj ulice"
+          :is-invalid="isInvalid.streetNumber"
+          :error-message="errorMessages.streetNumber"
           v-model="newCompany.companyOffice.streetNumber"
         />
       </div>
@@ -98,6 +115,8 @@
           type="text"
           id="direktor"
           label="Direktor / ovlaštena osoba"
+          :is-invalid="isInvalid.director"
+          :error-message="errorMessages.director"
           v-model="newCompany.companyDirector"
         />
         <FormGroup
@@ -105,12 +124,16 @@
           type="tel"
           id="telefonkompanije"
           label="Broj telefona"
+          :is-invalid="isInvalid.phone"
+          :error-message="errorMessages.phone"
           v-model="newCompany.companyContact.phone"
         />
         <FormGroup
-          type="email"
+          type="text"
           id="emailkompanije"
           label="Email"
+          :is-invalid="isInvalid.email"
+          :error-message="errorMessages.email"
           v-model="newCompany.companyContact.email"
         />
       </div>
@@ -120,6 +143,7 @@
     </div>
   </form>
 </template>
+
 <script>
 // Vue Components
 import SectionTitle from "./SectionTitle.vue";
@@ -158,6 +182,32 @@ export default {
           email: "",
         },
       },
+      isInvalid: {
+        id: false,
+        fullName: false,
+        shortName: false,
+        type: false,
+        city: false,
+        street: false,
+        streetNumber: false,
+        isTaxpayer: false,
+        director: false,
+        email: false,
+        phone: false,
+      },
+      errorMessages: {
+        id: "",
+        fullName: "",
+        shortName: "",
+        type: "",
+        city: "",
+        street: "",
+        streetNumber: "",
+        isTaxpayer: "",
+        director: "",
+        email: "",
+        phone: "",
+      },
     };
   },
   methods: {
@@ -169,7 +219,110 @@ export default {
       }
     },
     handleSubmit() {
-      this.companyStore.saveCompany(this.newCompany);
+      // Validate companyFullName
+      if (!this.newCompany.companyFullName.trim()) {
+        this.isInvalid.fullName = true;
+        this.errorMessages.fullName = "Puni naziv kompanije je obavezan.";
+      } else {
+        this.isInvalid.fullName = false;
+      }
+      // Validate companyShortName
+      if (!this.newCompany.companyShortName.trim()) {
+        this.isInvalid.shortName = true;
+        this.errorMessages.shortName = "Skraćeni naziv kompanije je obavezan.";
+      } else {
+        this.isInvalid.shortName = false;
+      }
+      // Validate companyType
+      if (this.newCompany.companyType === "") {
+        this.isInvalid.type = true;
+        this.errorMessages.type = "Potrebno je odabrati vrstu kompanije.";
+      } else {
+        this.isInvalid.type = false;
+      }
+      // Validate companyId
+      if (!this.newCompany.companyId.trim()) {
+        this.isInvalid.id = true;
+        this.errorMessages.id = "ID broj kompanije je obavezan.";
+      } else if (
+        this.newCompany.companyId.trim() &&
+        this.newCompany.companyId.length !== 13
+      ) {
+        this.isInvalid.id = true;
+        this.errorMessages.id = "ID broj se mora sastojati iz 13 cifara.";
+      } else if (
+        this.newCompany.companyId.trim() &&
+        !/^[0-9]*$/.test(this.newCompany.companyId)
+      ) {
+        this.isInvalid.id = true;
+        this.errorMessages.id =
+          "ID broj ne smije sadržavati druge znakove osim cifara.";
+      } else {
+        this.isInvalid.id = false;
+      }
+      // Validate isTaxpayer
+      if (this.newCompany.companyIsTaxpayer === "") {
+        this.isInvalid.isTaxpayer = true;
+        this.errorMessages.isTaxpayer =
+          "Potrebno odabrati, da li je kompanije PDV obveznik";
+      } else {
+        this.isInvalid.isTaxpayer = false;
+      }
+
+      // Validate city
+      if (this.newCompany.companyOffice.city === "") {
+        this.isInvalid.city = true;
+        this.errorMessages.city =
+          "Potrebno je odabrati mjesto glavnog sjedišta.";
+      } else {
+        this.isInvalid.city = false;
+      }
+      // Validate street
+      if (!this.newCompany.companyOffice.street.trim()) {
+        this.isInvalid.street = true;
+        this.errorMessages.street = "Naziv ulice je obavezan.";
+      } else {
+        this.isInvalid.street = false;
+      }
+      // Validate streetNumber
+      if (!this.newCompany.companyOffice.streetNumber.trim()) {
+        this.isInvalid.streetNumber = true;
+        this.errorMessages.streetNumber = "Broj ulice je obavezan.";
+      } else {
+        this.isInvalid.streetNumber = false;
+      }
+      // Validate director
+      if (!this.newCompany.companyDirector.trim()) {
+        this.isInvalid.director = true;
+        this.errorMessages.director =
+          "Obavezno je unijeti direktora ili ovlaštenog predstavnika kompanije";
+      } else {
+        this.isInvalid.director = false;
+      }
+      // Validate email
+      if (
+        !this.newCompany.companyContact.email.trim() ||
+        !/\S+@\S+\.\S+/.test(this.newCompany.companyContact.email)
+      ) {
+        this.isInvalid.email = true;
+        this.errorMessages.email =
+          "Potrebno je unijeti email u ispravnom obliku.";
+      } else {
+        this.isInvalid.email = false;
+      }
+      // Validate phone
+      if (
+        !this.newCompany.companyContact.phone.trim() ||
+        !/^\+?\d{1,4}([-.\s]?\d{1,3}){2,3}$/.test(this.newCompany.companyContact.phone)
+      ) {
+        this.isInvalid.phone = true;
+        this.errorMessages.phone =
+          "Broj telefona je obavezan.";
+      } else {
+        this.isInvalid.phone = false;
+      }
+
+      //this.companyStore.saveCompany(this.newCompany);
     },
   },
   computed: {
@@ -177,4 +330,6 @@ export default {
     ...mapStores(useCompanyStore),
   },
 };
+// submitanje jedino moguće ako nema nijedan aria-invalid true
+// za ovu svrhu koristiti this.isInvalid (kao objekat ili array)
 </script>
