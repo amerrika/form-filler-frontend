@@ -68,10 +68,10 @@
     }
   }
 }
-@mixin hover-underline($thickness: 2px) {
+@mixin hover-underline($thickness: 2px, $color: $neutral-800) {
   @include mq(medium) {
     &:hover {
-      text-decoration: $thickness solid underline $neutral-800;
+      text-decoration: $thickness solid underline $color;
       text-underline-offset: 5px;
     }
   }
