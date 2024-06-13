@@ -138,12 +138,13 @@
         />
       </div>
     </div>
-    <div>
+    <div class="flex-end mb-start-6">
       <button
-        class="new-company-form__btn-submit p-2 fs-500 fw-500 bg-primary-blue br-10 txt-neutral-100"
+        class="new-company-form__btn-submit pb-2 pi-4 fs-500 fw-500 bg-primary-blue br-10 txt-neutral-100"
         type="submit"
       >
-        Sačuvaj kompaniju
+        <span class="new-company-form__btn-submit-icon"></span>
+        Spremi u bazu
       </button>
     </div>
   </form>
@@ -171,14 +172,14 @@ export default {
       // for creating a new company
       newCompany: {
         companyId: "",
-        companyIsTaxpayer: "",
+        companyIsTaxpayer: undefined,
         companyTaxId: "",
         companyFullName: "",
         companyShortName: "",
-        companyType: "",
+        companyType: undefined,
         companyDirector: "",
         companyOffice: {
-          city: "",
+          city: undefined,
           street: "",
           streetNumber: "",
         },
@@ -187,6 +188,7 @@ export default {
           email: "",
         },
       },
+      // data for validations
       isInvalid: {
         id: false,
         fullName: false,
@@ -224,10 +226,22 @@ export default {
       }
     },
     handleSubmit() {
+      const checkValidity = this.checkValidity();
+      // checkValidity() returns false or undefined
+      console.log(this.newCompany);
+
+      if (checkValidity === false) {
+        return;
+      } else {
+        this.companyStore.saveCompany(this.newCompany);
+      }
+    },
+    checkValidity() {
       // Validate companyFullName
       if (!this.newCompany.companyFullName.trim()) {
         this.isInvalid.fullName = true;
         this.errorMessages.fullName = "Puni naziv kompanije je obavezan.";
+        return false;
       } else {
         this.isInvalid.fullName = false;
       }
@@ -235,13 +249,15 @@ export default {
       if (!this.newCompany.companyShortName.trim()) {
         this.isInvalid.shortName = true;
         this.errorMessages.shortName = "Skraćeni naziv kompanije je obavezan.";
+        return false;
       } else {
         this.isInvalid.shortName = false;
       }
       // Validate companyType
-      if (this.newCompany.companyType === "") {
+      if (this.newCompany.companyType === undefined) {
         this.isInvalid.type = true;
         this.errorMessages.type = "Potrebno je odabrati vrstu kompanije.";
+        return false;
       } else {
         this.isInvalid.type = false;
       }
@@ -249,12 +265,14 @@ export default {
       if (!this.newCompany.companyId.trim()) {
         this.isInvalid.id = true;
         this.errorMessages.id = "ID broj kompanije je obavezan.";
+        return false;
       } else if (
         this.newCompany.companyId.trim() &&
         this.newCompany.companyId.length !== 13
       ) {
         this.isInvalid.id = true;
         this.errorMessages.id = "ID broj se mora sastojati iz 13 cifara.";
+        return false;
       } else if (
         this.newCompany.companyId.trim() &&
         !/^[0-9]*$/.test(this.newCompany.companyId)
@@ -262,23 +280,25 @@ export default {
         this.isInvalid.id = true;
         this.errorMessages.id =
           "ID broj ne smije sadržavati druge znakove osim cifara.";
+        return false;
       } else {
         this.isInvalid.id = false;
       }
       // Validate isTaxpayer
-      if (this.newCompany.companyIsTaxpayer === "") {
+      if (this.newCompany.companyIsTaxpayer === undefined) {
         this.isInvalid.isTaxpayer = true;
         this.errorMessages.isTaxpayer =
           "Potrebno odabrati, da li je kompanije PDV obveznik";
+        return false;
       } else {
         this.isInvalid.isTaxpayer = false;
       }
-
       // Validate city
-      if (this.newCompany.companyOffice.city === "") {
+      if (this.newCompany.companyOffice.city === undefined) {
         this.isInvalid.city = true;
         this.errorMessages.city =
           "Potrebno je odabrati mjesto glavnog sjedišta.";
+        return false;
       } else {
         this.isInvalid.city = false;
       }
@@ -286,6 +306,7 @@ export default {
       if (!this.newCompany.companyOffice.street.trim()) {
         this.isInvalid.street = true;
         this.errorMessages.street = "Naziv ulice je obavezan.";
+        return false;
       } else {
         this.isInvalid.street = false;
       }
@@ -293,6 +314,7 @@ export default {
       if (!this.newCompany.companyOffice.streetNumber.trim()) {
         this.isInvalid.streetNumber = true;
         this.errorMessages.streetNumber = "Broj ulice je obavezan.";
+        return false;
       } else {
         this.isInvalid.streetNumber = false;
       }
@@ -301,19 +323,9 @@ export default {
         this.isInvalid.director = true;
         this.errorMessages.director =
           "Obavezno je unijeti direktora ili ovlaštenog predstavnika kompanije";
+        return false;
       } else {
         this.isInvalid.director = false;
-      }
-      // Validate email
-      if (
-        !this.newCompany.companyContact.email.trim() ||
-        !/\S+@\S+\.\S+/.test(this.newCompany.companyContact.email)
-      ) {
-        this.isInvalid.email = true;
-        this.errorMessages.email =
-          "Potrebno je unijeti email u ispravnom obliku.";
-      } else {
-        this.isInvalid.email = false;
       }
       // Validate phone
       if (
@@ -324,11 +336,22 @@ export default {
       ) {
         this.isInvalid.phone = true;
         this.errorMessages.phone = "Broj telefona je obavezan.";
+        return false;
       } else {
         this.isInvalid.phone = false;
       }
-
-      //this.companyStore.saveCompany(this.newCompany);
+      // Validate email
+      if (
+        !this.newCompany.companyContact.email.trim() ||
+        !/\S+@\S+\.\S+/.test(this.newCompany.companyContact.email)
+      ) {
+        this.isInvalid.email = true;
+        this.errorMessages.email =
+          "Potrebno je unijeti email u ispravnom obliku.";
+        return false;
+      } else {
+        this.isInvalid.email = false;
+      }
     },
   },
   computed: {
