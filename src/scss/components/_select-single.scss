@@ -1,6 +1,14 @@
 @use "../abstracts/" as *;
 
 // Placeholders
+%error-icon {
+  @include size-equal(1.8rem);
+  background: url($icon-input-error);
+  background-repeat: no-repeat;
+  background-position: center;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
 %select-single {
   position: relative;
 }
@@ -44,6 +52,11 @@
     &_primary {
       @extend %select-single;
       width: 30rem;
+      position: relative;
+      border-radius: 0.5rem;
+      &[data-invalid="true"] {
+        box-shadow: $box-shadow-error;
+      }
     }
   }
   // Element
@@ -86,6 +99,17 @@
   }
   // Element
   &__error {
-    @extend %input-message-warning;
+    @extend %error-bubble-down;
+    position: absolute;
+    z-index: 99;
+    bottom: 5.2rem;
+    // Element
+    &-icon {
+      @extend %error-icon;
+    }
+    // Element
+    &-message {
+      letter-spacing: 0.2px;
+    }
   }
 }
