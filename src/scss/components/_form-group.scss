@@ -1,5 +1,14 @@
 @use "../abstracts/" as *;
 
+// Placeholders
+%error-icon {
+  @include size-equal(1.8rem);
+  background: url($icon-input-error);
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
 // Block
 .form-group {
   display: flex;
@@ -8,6 +17,10 @@
   // Element
   &__label {
     font-size: $fs-200;
+  }
+  // Element
+  &__input-wrapper {
+    position: relative;
   }
   // Element
   &__input {
@@ -21,6 +34,17 @@
   }
   // Element
   &__error {
-    @extend %input-message-warning;
+    @extend %error-bubble-up;
+    position: absolute;
+    z-index: 99;
+    top: 5.2rem;
+    // Element
+    &-icon {
+      @extend %error-icon;
+    }
+    // Element
+    &-message {
+      letter-spacing: 0.2px;
+    }
   }
 }
