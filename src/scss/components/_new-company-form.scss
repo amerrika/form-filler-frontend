@@ -1,14 +1,25 @@
 @use "../abstracts/" as *;
 
+// Placeholders
+%submit-icon {
+  @include size-equal(2.4rem);
+}
+
 // Block
 .new-company-form {
   border: 1px solid $neutral-400;
   // Element
   &__btn-submit {
-    @extend %btn-center;
-    margin-left: auto;
+    @extend %btn-flex-start;
     &:hover {
-      @include hover-underline($color: $neutral-100)
+      @include hover-underline($color: $neutral-100);
+    }
+    // Element
+    &-icon {
+      @extend %submit-icon;
+      background: url($icon-add-company);
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 }
