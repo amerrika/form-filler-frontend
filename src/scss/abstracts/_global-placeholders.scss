@@ -49,11 +49,48 @@
   padding: 1rem;
 }
 
-%input-message-warning {
-  font-size: $fs-100;
-  color: $alert-red;
-  text-shadow: $text-shadow-100;
+%error-bubble-up {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
+  max-width: 25rem;
+  background-color: $alert-red;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: $neutral-100;
+  font-size: $fs-100;
+  font-weight: $fw-600;
+
+  &::after {
+    content: "";
+    border: 10px solid transparent;
+    border-bottom-color: $alert-red;
+    border-top: 0;
+    position: absolute;
+    left: calc(50% - 10px);
+    top: -10px;
+  }
+}
+
+%error-bubble-down {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 25rem;
+  background-color: $alert-red;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: $neutral-100;
+  font-size: $fs-100;
+  font-weight: $fw-600;
+
+  &::after {
+    content: "";
+    border: 10px solid transparent;
+    border-top-color: $alert-red;
+    border-bottom: 0;
+    position: absolute;
+    left: calc(50% - 10px);
+    bottom: -10px;
+  }
 }
