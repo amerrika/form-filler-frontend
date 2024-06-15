@@ -1,3 +1,0 @@
-<template>
-    Employees Page
-</template>
