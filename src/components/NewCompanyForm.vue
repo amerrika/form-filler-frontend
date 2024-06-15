@@ -227,7 +227,9 @@ export default {
     },
     handleSubmit() {
       const checkValidity = this.checkValidity();
-      // checkValidity() returns false or undefined
+      // returns false or undefined
+      // false means form is invalid
+      // undefined means it's valid
       console.log(this.newCompany);
 
       if (checkValidity === false) {
