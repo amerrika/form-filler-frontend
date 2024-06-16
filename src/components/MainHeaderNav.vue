@@ -7,7 +7,7 @@
           activeClass="bg-primary-500"
           class="main-nav__link txt-neutral-800 fs-300 fw-500"
         >
-          <img class="main-nav__icon" src="/icon-home.png" alt="" />
+          <img class="main-nav__icon" src="/icons/icon-home.png" alt="" />
           <span>Početna</span>
         </router-link>
       </li>
@@ -17,7 +17,7 @@
           activeClass="bg-primary-500"
           class="main-nav__link txt-neutral-800 fs-300 fw-500"
         >
-          <img class="main-nav__icon" src="/icon-form.png" alt="" />
+          <img class="main-nav__icon" src="/icons/icon-form.png" alt="" />
           <span>Obrasci</span>
         </router-link>
       </li>
@@ -27,7 +27,7 @@
           activeClass="bg-primary-500"
           class="main-nav__link txt-neutral-800 fs-300 fw-500"
         >
-          <img class="main-nav__icon" src="/icon-database.png" alt="" />
+          <img class="main-nav__icon" src="/icons/icon-database.png" alt="" />
           <span>Kolekcije</span>
         </router-link>
       </li>

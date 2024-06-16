@@ -2,7 +2,7 @@
   <header class="main-header" :class="minimizedStyle">
     <!-- Header Top-->
     <div class="main-header__top p-3">
-      <img src="/icon-violet.png" class="main-header__logo" v-if="!minimized" />
+      <img src="/icons/icon-violet.png" class="main-header__logo" v-if="!minimized" />
       <button
         :class="[
           minimized
