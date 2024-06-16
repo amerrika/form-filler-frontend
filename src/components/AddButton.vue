@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="linkTo" class="btn-add__employee">
+  <router-link :to="linkTo" class="btn-add">
     <img :src="iconSrc" alt="" />
     <span>{{ btnText }}</span>
   </router-link>
