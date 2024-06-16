@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageTitle title="Početna stranica aplikacije" icon-src="/icon-home.png" />
+    <PageTitle title="Početna stranica aplikacije" icon-src="/icons/icon-home.png" />
     <!-- Section -->
     <section class="home__section p-5 br-10 mb-start-5">
       <SectionTitle
