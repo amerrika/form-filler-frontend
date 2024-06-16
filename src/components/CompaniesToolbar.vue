@@ -7,17 +7,21 @@
       btn-text="Filtriraj kompanije"
       @selected-options="updateSelectedFilterOptions"
     />
-    <ButtonAddCompany />
+    <AddButton
+      icon-src="/icons/icon-add-company.svg"
+      btn-text="Novu kompaniju"
+      link-to="/collections/companies/new"
+    />
   </div>
 </template>
 <script>
-import ButtonAddCompany from "./AddButtonCompany.vue";
+import AddButton from "./AddButton.vue";
 import FilterResults from "./FilterResults.vue"
 
 export default {
   components: {
     FilterResults,
-    ButtonAddCompany,
+    AddButton,
   },
   data() {
     return {
