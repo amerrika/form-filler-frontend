@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import MainNav from "./MainNav.vue";
+import MainNav from "./MainHeaderNav.vue";
 export default {
   components: {
     MainNav,
