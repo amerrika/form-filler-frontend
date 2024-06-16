@@ -27,8 +27,9 @@
   </div>
 </template>
 <script>
-import ButtonAddEmployee from "./buttons/ButtonAddEmployee.vue";
-import ButtonAddCompany from "./buttons/ButtonAddCompany.vue";
+import ButtonAddEmployee from "./AddButtonEmployee.vue";
+import ButtonAddCompany from "./AddButtonCompany.vue";
+
 
 export default {
   components: {

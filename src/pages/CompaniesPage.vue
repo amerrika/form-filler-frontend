@@ -9,7 +9,7 @@
 
 <script>
 // Vue Components
-import ButtonInfo from "@/components/buttons/ButtonInfo.vue";
+import ButtonInfo from "@/components/ButtonInfo.vue";
 import CompaniesToolbar from "@/components/CompaniesToolbar.vue";
 import CompaniesList from "@/components/CompaniesList.vue";
 // Pinia Store (used without setup function)

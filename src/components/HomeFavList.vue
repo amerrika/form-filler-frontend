@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ButtonSettings from "./buttons/ButtonSettings.vue";
+import ButtonSettings from "./ButtonSettings.vue";
 
 export default {
   components: {

@@ -153,8 +153,8 @@
 <script>
 // Vue Components
 import SectionTitle from "./SectionTitle.vue";
-import SelectSingle from "@/components/inputs/SelectSingle.vue";
-import FormGroup from "@/components/inputs/FormGroup.vue";
+import SelectSingle from "@/components/SelectSingle.vue";
+import FormGroup from "@/components/FormGroup.vue";
 // Pinia Store (used without setup function)
 import { useCompanyStore } from "@/stores/companyStore";
 import { mapStores, setMapStoreSuffix } from "pinia";

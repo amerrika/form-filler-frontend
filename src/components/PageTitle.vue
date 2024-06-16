@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import ButtonInfo from "./buttons/ButtonInfo.vue";
+import ButtonInfo from "./ButtonInfo.vue";
 export default {
   props: {
     title: {

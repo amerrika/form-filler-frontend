@@ -11,8 +11,8 @@
   </div>
 </template>
 <script>
-import ButtonAddCompany from "./buttons/ButtonAddCompany.vue";
-import FilterResults from "./inputs/FilterResults.vue";
+import ButtonAddCompany from "./AddButtonCompany.vue";
+import FilterResults from "./FilterResults.vue"
 
 export default {
   components: {
