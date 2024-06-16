@@ -6,10 +6,18 @@
       </div>
       <ul class="home-fav__menu p-3 bg-neutral-100">
         <li class="home-fav__item p-2">
-          <ButtonAddEmployee />
+          <AddButton
+            icon-src="/icons/icon-add-employee.svg"
+            btn-text="Novog zaposlenog"
+            link-to="/collections/employees/new"
+          />
         </li>
         <li role="button" class="home-fav__item p-2">
-          <ButtonAddCompany />
+          <AddButton
+            icon-src="/icons/icon-add-company.svg"
+            btn-text="Novu kompaniju"
+            link-to="/collections/companies/new"
+          />
         </li>
       </ul>
     </div>
@@ -26,15 +34,13 @@
     </div>
   </div>
 </template>
-<script>
-import ButtonAddEmployee from "./AddButtonEmployee.vue";
-import ButtonAddCompany from "./AddButtonCompany.vue";
 
+<script>
+import AddButton from "./AddButton.vue";
 
 export default {
   components: {
-    ButtonAddEmployee,
-    ButtonAddCompany,
+    AddButton,
   },
 };
 </script>
