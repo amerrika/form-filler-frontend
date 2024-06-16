@@ -1,6 +1,6 @@
 <template>
-  <router-link to={{ linkTo }} class="btn-add__employee">
-    <img src={{ iconSrc }} alt="" />
+  <router-link :to="linkTo" class="btn-add__employee">
+    <img :src="iconSrc" alt="" />
     <span>{{ btnText }}</span>
   </router-link>
 </template>
