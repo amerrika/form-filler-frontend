@@ -10,23 +10,31 @@
     @include size-equal(2rem);
   }
 }
+%btn-icon {
+  @extend %btn;
+  @include size-equal(2.4rem);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
 
 // Block
 .btn-add {
-  // Element
-  &__employee,
-  &__company {
-    @extend %btn-add;
-  }
+  @extend %btn-add;
 }
+
 // Block
-.btn-info,
-.btn-settings {
-  @extend %btn-center;
-  &:hover {
-    background-color: $neutral-500;
+.btn-icon {
+  @extend %btn-icon;
+  // Modifier
+  &_info {
+    @extend %btn-icon;
+    background-image: url($icon-info);
   }
-  &:active {
-    background-color: $neutral-600;
+  // Modifier
+  &_settings {
+    @extend %btn-icon;
+    background-image: url($icon-settings);
   }
 }
