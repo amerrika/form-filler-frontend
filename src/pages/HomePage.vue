@@ -2,7 +2,7 @@
   <div class="home">
     <PageTitle
       title="Početna stranica aplikacije"
-      icon-src="/icons/icon-home.png"
+      icon-src="/icons/icon-home.svg"
     />
     <!-- Section -->
     <section class="home__section p-5 br-10 mb-start-5">
