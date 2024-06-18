@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../pages/Home.vue";
-import FormsPage from "@/pages/FormsPage.vue";
-import CollectionsPage from "@/pages/CollectionsPage.vue";
+import HomePage from "../pages/HomePage.vue";
+import DocumentsPage from "@/pages/DocumentsPage.vue";
 import CompaniesPage from "@/pages/CompaniesPage.vue";
 import EmployeesPage from "@/pages/EmployeesPage.vue";
 import NewCompanyPage from "@/pages/NewCompanyPage.vue";
+import DatabasePage from "@/pages/DatabasePage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,17 +12,17 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: Home,
+      component: HomePage,
     },
     {
-      path: "/forms",
-      name: "forms",
-      component: FormsPage,
+      path: "/documents",
+      name: "documents",
+      component: DocumentsPage,
     },
     {
       path: "/collections",
-      name: "collections",
-      component: CollectionsPage,
+      name: "database",
+      component: DatabasePage,
     },
     {
       path: "/collections/companies",
@@ -36,7 +36,7 @@ const router = createRouter({
     },
     {
       path: "/collections/companies/new",
-      name: "new-company",
+      name: "newcompany",
       component: NewCompanyPage,
     },
   ],
