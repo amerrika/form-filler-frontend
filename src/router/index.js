@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
-import DocumentsPage from "@/pages/DocumentsPage.vue";
-import CompaniesPage from "@/pages/CompaniesPage.vue";
-import EmployeesPage from "@/pages/EmployeesPage.vue";
+import AllDocumentsPage from "@/pages/AllDocumentsPage.vue";
+import AllCompaniesPage from "@/pages/AllCompaniesPage.vue";
+import AllEmployeesPage from "@/pages/AllEmployeesPage.vue";
 import NewCompanyPage from "@/pages/NewCompanyPage.vue";
 import DatabasePage from "@/pages/DatabasePage.vue";
 
@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: "/documents",
       name: "documents",
-      component: DocumentsPage,
+      component: AllDocumentsPage,
     },
     {
       path: "/collections",
@@ -27,12 +27,12 @@ const router = createRouter({
     {
       path: "/collections/companies",
       name: "companies",
-      component: CompaniesPage,
+      component: AllCompaniesPage,
     },
     {
       path: "/collections/employees",
       name: "employees",
-      component: EmployeesPage,
+      component: AllEmployeesPage,
     },
     {
       path: "/collections/companies/new",
