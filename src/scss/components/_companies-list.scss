@@ -1,24 +1,32 @@
 @use "../abstracts/" as *;
+// Placeholders
+%width-regular {
+  width: clamp(10rem, 10vw, 15rem);
+}
+%width-big {
+  width: clamp(10rem, 15vw, 20rem);
+}
 
 // Block
-.companies-list {
+.companies-results-list {
   // Element
-  &__row a,
-  &__head {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  // Element
-  &__data {
-    width: clamp(10rem, 10vw, 15rem);
+  &__header-content {
+    @extend %width-regular;
     // Modifier
     &_big {
-      width: clamp(10rem, 15vw, 20rem);
+      @extend %width-big;
     }
   }
   // Element
-  &__row {
+  &__data-content {
+    @extend %width-regular;
+    // Modifier
+    &_big {
+      @extend %width-big;
+    }
+  }
+  // Element
+  &__data-row {
     @include border-bottom($color: $primary-600);
     &:hover {
       background-color: $primary-500;
