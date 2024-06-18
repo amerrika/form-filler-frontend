@@ -1,14 +1,14 @@
 <template>
   <PageTitle title="Baza svih kompanija" icon-src="/icons/icon-database.png" />
-  <CompaniesToolbar />
-  <CompaniesList :companies="companyStore.companies" />
+  <CompaniesPageToolbar />
+  <CompaniesPageResultsList :companies="companyStore.companies" />
 </template>
 
 <script>
 // Vue Components
 import PageTitle from "@/components/PageTitle.vue";
-import CompaniesToolbar from "@/components/CompaniesToolbar.vue";
-import CompaniesList from "@/components/CompaniesList.vue";
+import CompaniesPageToolbar from "@/components/CompaniesPageToolbar.vue";
+import CompaniesPageResultsList from "@/components/CompaniesPageResultsList.vue";
 // Pinia Store (used without setup function)
 import { useCompanyStore } from "@/stores/companyStore";
 import { mapStores, setMapStoreSuffix } from "pinia";
@@ -17,8 +17,8 @@ setMapStoreSuffix("");
 export default {
   components: {
     PageTitle,
-    CompaniesToolbar,
-    CompaniesList,
+    CompaniesPageToolbar,
+    CompaniesPageResultsList,
   },
   computed: {
     // using Pinia without setup function
