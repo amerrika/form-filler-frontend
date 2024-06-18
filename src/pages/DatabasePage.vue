@@ -1,5 +1,5 @@
 <template>
-  <PageTitle title="Baza svih kolekcija" icon-src="/icons/icon-database.png" />
+  <PageTitle title="Baza podataka" icon-src="/icons/icon-database.svg" />
   <CollectionsPageList :companies-total-count="companyStore.totalCount" />
 </template>
 
