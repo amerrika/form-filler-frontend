@@ -5,6 +5,7 @@ import AllCompaniesPage from "@/pages/AllCompaniesPage.vue";
 import AllEmployeesPage from "@/pages/AllEmployeesPage.vue";
 import NewCompanyPage from "@/pages/NewCompanyPage.vue";
 import DatabasePage from "@/pages/DatabasePage.vue";
+import DocumentPage from "@/pages/DocumentPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,6 +19,11 @@ const router = createRouter({
       path: "/documents",
       name: "documents",
       component: AllDocumentsPage,
+    },
+    {
+      path: "/documents/open-document/",
+      name: "document",
+      component: DocumentPage,
     },
     {
       path: "/collections",
