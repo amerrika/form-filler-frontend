@@ -2,21 +2,21 @@
   <div class="new-company">
     <PageTitle
       title="Dodavanje nove kompanije u bazu"
-      icon-src="/icon-add-company.svg"
+      icon-src="/icons/icon-add-company.svg"
     />
-    <NewCompanyForm />
+    <FormCompany />
   </div>
 </template>
 <script>
 import PageTitle from "@/components/PageTitle.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
-import NewCompanyForm from "@/components/NewCompanyForm.vue";
+import FormCompany from "@/components/FormCompany.vue";
 
 export default {
   components: {
     PageTitle,
     SectionTitle,
-    NewCompanyForm,
+    FormCompany,
   },
 };
 // All data provided by the user will be saved
