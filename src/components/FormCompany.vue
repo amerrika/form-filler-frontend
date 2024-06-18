@@ -6,7 +6,10 @@
     <div class="even-columns g-10">
       <!-- Grouping of Inputs-->
       <div>
-        <SectionTitle title="Podaci o firmi" iconSrc="/icon-company-card.png" />
+        <SectionTitle
+          title="Podaci o firmi"
+          iconSrc="/icons/icon-company-card.png"
+        />
         <FormGroup
           class="mb-end-4"
           type="text"
@@ -39,7 +42,7 @@
       <div>
         <SectionTitle
           title="Identifikacioni podaci"
-          iconSrc="/icon-company-id.svg"
+          iconSrc="/icons/icon-company-id.svg"
         />
         <FormGroup
           class="mb-end-4"
@@ -74,7 +77,7 @@
       <div>
         <SectionTitle
           title="Sjedište i adresa kompanije"
-          iconSrc="/icon-office.svg"
+          iconSrc="/icons/icon-office.svg"
         />
         <SelectSingle
           class="mb-end-4"
@@ -108,7 +111,7 @@
       <div>
         <SectionTitle
           title="Kontakt podaci"
-          iconSrc="/icon-company-contact.svg"
+          iconSrc="/icons/icon-company-contact.svg"
         />
         <FormGroup
           class="mb-end-4"
