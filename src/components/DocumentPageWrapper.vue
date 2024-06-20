@@ -1,3 +1,0 @@
-<template>
-    Document Wrapper
-</template>
