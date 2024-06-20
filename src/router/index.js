@@ -21,7 +21,7 @@ const router = createRouter({
       component: AllDocumentsPage,
     },
     {
-      path: "/documents/open-document/",
+      path: "/documents/document/",
       name: "document",
       component: DocumentPage,
     },
