@@ -1,8 +1,14 @@
 @use "../abstracts/" as *;
 
+// Placeholders
+%main-header-toggle {
+  @extend %btn-icon-center;
+  @include size-equal(2.5rem);
+}
+
 // Block
 .main-header {
-  height: 100vh;
+  height: calc(100vh - 2rem);
   width: clamp(15rem, 25vw, 25rem);
   transition: all 0.3s ease;
   border-right: 1px solid $neutral-400;
@@ -16,13 +22,12 @@
   }
   // Element
   &__btn-toggle {
-    @extend %btn-center;
-    @include size-equal(2.5rem);
-    background: url($icon-left);
+    @extend %main-header-toggle;
+    background-image: url($icon-header-left);
     // Modifier
     &_minimized {
-      @extend .main-header__btn-toggle;
-      background: url($icon-right);
+      @extend %main-header-toggle;
+      background-image: url($icon-header-right);
     }
   }
   // Element
