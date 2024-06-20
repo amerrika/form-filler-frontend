@@ -2,6 +2,9 @@
 @use "./collections-list";
 @use "./companies-list";
 @use "./companies-toolbar";
+@use "./document-page-container";
+@use "./document-page-container-sidebar";
+@use "./document-page-container-viewer";
 @use "./listbox-favorites";
 @use "./filter-results";
 @use "./form-group";
