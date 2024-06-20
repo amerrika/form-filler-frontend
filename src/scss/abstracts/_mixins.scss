@@ -80,7 +80,7 @@
   width: $size;
   height: $size;
 }
-@mixin border-bottom($width: 1px, $style: solid, $color) {
+@mixin border-bottom($width: 1px, $style: solid, $color: $neutral-400) {
   border-bottom: $width $style $color;
 }
 @mixin flex-columns($gap) {
