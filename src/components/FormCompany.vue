@@ -8,7 +8,7 @@
       <div>
         <SectionTitle
           title="Podaci o firmi"
-          iconSrc="/icons/icon-company-card.png"
+          iconSrc="/icons/icon-company-card.svg"
         />
         <FormGroup
           class="mb-end-4"
@@ -77,7 +77,7 @@
       <div>
         <SectionTitle
           title="Sjedište i adresa kompanije"
-          iconSrc="/icons/icon-office.svg"
+          iconSrc="/icons/icon-company-office.svg"
         />
         <SelectSingle
           class="mb-end-4"
