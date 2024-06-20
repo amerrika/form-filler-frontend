@@ -32,6 +32,17 @@
   }
 }
 
+%btn-icon-center {
+  @extend %btn;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  &:hover {
+    background-color: $neutral-500;
+  }
+}
+
 %arrow-down {
   @extend %btn;
   @include size-equal(2rem);
