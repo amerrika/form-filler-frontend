@@ -14,6 +14,6 @@ main {
 .home {
   // Element
   &__section {
-    border: 1px solid $neutral-400;
+    @include border-all;
   }
 }
