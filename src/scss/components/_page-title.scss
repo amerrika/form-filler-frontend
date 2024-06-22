@@ -2,13 +2,13 @@
 
 // Block
 .page-title {
-  height: 6.1rem;
+  height: 5.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
   padding: 2rem;
-  @include border-bottom($color: $neutral-400);
+  @include border-bottom;
   // Element
   &__icon {
     @include size-equal(2.5rem);
