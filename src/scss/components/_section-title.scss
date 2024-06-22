@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  @include border-bottom($width: 2px, $color: $primary-500);
+  @include border-bottom($width: 2px, $color: $border-light);
   // Element
   &__icon {
     @include size-equal(2.5rem);
