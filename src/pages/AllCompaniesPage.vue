@@ -1,5 +1,5 @@
 <template>
-  <PageTitle title="Baza svih kompanija" icon-src="/icons/icon-database.png" />
+  <PageTitle title="Baza svih kompanija" icon-src="/icons/icon-building.svg" />
   <AllCompaniesPageToolbar />
   <AllCompaniesPageResultsList :companies="companyStore.companies" />
 </template>
