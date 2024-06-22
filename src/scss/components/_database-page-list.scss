@@ -12,8 +12,8 @@
 }
 
 // Block
-.collections-list {
-  box-shadow: $box-shadow-primary;
+.database-page-list {
+  @include border-all;
   // Element
   &__header-icon {
     /* header-icon is empty, it is for alignment */
