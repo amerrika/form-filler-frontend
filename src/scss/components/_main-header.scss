@@ -11,14 +11,14 @@
   height: calc(100vh - 2rem);
   width: clamp(15rem, 25vw, 25rem);
   transition: all 0.3s ease;
-  border-right: 1px solid $neutral-400;
+  @include border-right;
   // Element
   &__top {
-    height: 6.1rem;
+    height: 5.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include border-bottom($color: $neutral-400);
+    @include border-bottom;
   }
   // Element
   &__btn-toggle {
