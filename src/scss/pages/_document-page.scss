@@ -1,0 +1,5 @@
+@use "../abstracts/" as *;
+
+.document-page {
+  height: calc(100vh - 2rem);
+}
