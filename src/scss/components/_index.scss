@@ -1,10 +1,9 @@
 @use "./buttons.scss";
-@use "./collections-list";
 @use "./companies-list";
 @use "./companies-toolbar";
-@use "./document-page-container";
-@use "./document-page-container-sidebar";
-@use "./document-page-container-viewer";
+@use "./database-page-list";
+@use "./document-page-sidebar";
+@use "./document-viewer";
 @use "./listbox-favorites";
 @use "./filter-results";
 @use "./form-group";
