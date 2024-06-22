@@ -80,8 +80,17 @@
   width: $size;
   height: $size;
 }
-@mixin border-bottom($width: 1px, $style: solid, $color: $neutral-400) {
+@mixin border-all($width: 1px, $style: solid, $color: $border-regular) {
+  border: $width $style $color;
+}
+@mixin border-bottom($width: 1px, $style: solid, $color: $border-regular) {
   border-bottom: $width $style $color;
+}
+@mixin border-right($width: 1px, $style: solid, $color: $border-regular) {
+  border-right: $width $style $color;
+}
+@mixin border-left($width: 1px, $style: solid, $color: $border-regular) {
+  border-left: $width $style $color;
 }
 @mixin flex-columns($gap) {
   display: flex;
