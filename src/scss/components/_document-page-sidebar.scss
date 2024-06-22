@@ -1,0 +1,8 @@
+@use "../abstracts/" as *;
+
+// Block
+.document-page-sidebar {
+  height: calc(100vh - 7.5rem);
+  width: clamp(25rem, 30vw, 35rem);
+  border-left: 1px solid $neutral-400;
+}
