@@ -3,6 +3,17 @@
 // Block
 .app {
   // Element
+  &__main-nav {
+    transition: all 0.2s ease;
+    /* Transition styles */
+    &.enter-active {
+      transform: translateX(0);
+    }
+    &.leave-active {
+      transform: translateX(-150%);
+    }
+  }
+  // Element
   &__main-nav-menu {
     display: flex;
     flex-direction: column;
