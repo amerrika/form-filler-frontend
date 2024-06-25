@@ -2,7 +2,11 @@
   <header class="main-header" :class="minimizedStyle">
     <!-- Header Top-->
     <div class="main-header__top p-3">
-      <img src="/icons/icon-violet.png" class="main-header__logo" v-if="!minimized" />
+      <img
+        src="/icons/icon-violet.png"
+        class="main-header__logo"
+        v-if="!minimized"
+      />
       <button
         :class="[
           minimized
@@ -13,15 +17,15 @@
       ></button>
     </div>
     <!-- MainNav -->
-    <MainNav v-if="!minimized" />
+    <AppMainHeaderNav v-if="!minimized" />
   </header>
 </template>
 
 <script>
-import MainNav from "./MainHeaderNav.vue";
+import AppMainHeaderNav from "./AppMainHeaderNav.vue";
 export default {
   components: {
-    MainNav,
+    AppMainHeaderNav,
   },
   data() {
     return {
