@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+// Block
+.home-page {
+  // Element
+  &__section {
+    @include border-all;
+  }
+}
