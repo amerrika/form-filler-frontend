@@ -1,22 +1,22 @@
 <template>
-  <header class="main-header" :class="minimizedStyle">
+  <header class="app__main-header" :class="minimizedStyle">
     <!-- Header Top-->
-    <div class="main-header__top p-3">
+    <div class="app__main-header-top p-3">
       <img
         src="/icons/icon-violet.png"
-        class="main-header__logo"
+        class="app__main-header-logo"
         v-if="!minimized"
       />
       <button
         :class="[
           minimized
-            ? 'main-header__btn-toggle_minimized'
-            : 'main-header__btn-toggle',
+            ? 'app__main-header-btn-toggle_minimized'
+            : 'app__main-header-btn-toggle',
         ]"
         @click="toggle"
       ></button>
     </div>
-    <!-- MainNav -->
+    <!-- AppMainNav -->
     <AppMainHeaderNav v-if="!minimized" />
   </header>
 </template>
