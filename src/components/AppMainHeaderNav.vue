@@ -1,33 +1,41 @@
 <template>
-  <nav class="main-nav">
-    <ul class="main-nav__menu pb-end-2">
-      <li class="main-nav__item">
+  <nav class="app__main-nav">
+    <ul class="app__main-nav-menu pb-end-2">
+      <li class="app__main-nav-item">
         <router-link
           to="/"
           activeClass="bg-primary-500"
-          class="main-nav__link txt-neutral-800 fs-300 fw-500"
+          class="app__main-nav-link txt-neutral-800 fs-300 fw-500"
         >
-          <img class="main-nav__icon" src="/icons/icon-home.svg" alt="" />
+          <img class="app__main-nav-icon" src="/icons/icon-home.svg" alt="" />
           <span>Početna</span>
         </router-link>
       </li>
-      <li class="main-nav__item">
+      <li class="app__main-nav-item">
         <router-link
           to="/documents"
           activeClass="bg-primary-500"
-          class="main-nav__link txt-neutral-800 fs-300 fw-500"
+          class="app__main-nav-link txt-neutral-800 fs-300 fw-500"
         >
-          <img class="main-nav__icon" src="/icons/icon-document.svg" alt="" />
+          <img
+            class="app__main-nav-icon"
+            src="/icons/icon-document.svg"
+            alt=""
+          />
           <span>Dokumenti</span>
         </router-link>
       </li>
-      <li class="main-nav__item">
+      <li class="app__main-nav-item">
         <router-link
           to="/collections"
           activeClass="bg-primary-500"
-          class="main-nav__link txt-neutral-800 fs-300 fw-500"
+          class="app__main-nav-link txt-neutral-800 fs-300 fw-500"
         >
-          <img class="main-nav__icon" src="/icons/icon-database.svg" alt="" />
+          <img
+            class="app__main-nav-icon"
+            src="/icons/icon-database.svg"
+            alt=""
+          />
           <span>Baza podataka</span>
         </router-link>
       </li>
