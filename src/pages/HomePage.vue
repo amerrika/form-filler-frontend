@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home-page">
     <PageTitle
       title="Početna stranica aplikacije"
       icon-src="/icons/icon-home.svg"
     />
     <!-- Section -->
-    <section class="home__section p-5 br-10 mb-start-5">
+    <section class="home-page__section p-5 br-10 mb-start-5">
       <SectionTitle
         title="Često korišteni dokumenti"
         icon-src="/icons/icon-favorite.svg"
@@ -14,7 +14,7 @@
       </div>
     </section>
     <!-- Section -->
-    <section class="home__section p-5 br-10 mb-start-5">
+    <section class="home-page__section p-5 br-10 mb-start-5">
       <SectionTitle
         title="Često korištene radnje"
         icon-src="/icons/icon-favorite.svg"
