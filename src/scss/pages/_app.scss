@@ -1,19 +1,12 @@
 @use "../abstracts/" as *;
 
-#app {
-  display: flex;
-}
-
-main {
-  flex-grow: 2;
-  padding-inline: 4rem;
-  padding-block-end: 2rem;
-}
-
 // Block
-.home {
+.app {
+  display: flex;
   // Element
-  &__section {
-    @include border-all;
+  &__main {
+    flex-grow: 2;
+    padding-inline: 4rem;
+    padding-block-end: 2rem;
   }
 }
