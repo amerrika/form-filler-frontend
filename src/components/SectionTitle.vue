@@ -15,6 +15,7 @@ export default {
     },
     iconSrc: {
       type: String,
+      default: "/icons/icon-is-missing.svg",
     },
   },
 };
