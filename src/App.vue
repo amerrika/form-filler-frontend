@@ -1,13 +1,13 @@
 <template>
-  <MainHeader />
-  <main>
+  <AppMainHeader />
+  <main class="app__main">
     <RouterView />
   </main>
 </template>
 
 <script>
 // Vue Components
-import MainHeader from "./components/MainHeader.vue";
+import AppMainHeader from "./components/AppMainHeader.vue";
 // Scss
 import "../src/scss/main.scss";
 // Pinia Store (used without setup function)
@@ -17,7 +17,7 @@ setMapStoreSuffix("");
 
 export default {
   components: {
-    MainHeader,
+    AppMainHeader,
   },
   computed: {
     // using Pinia without setup function
