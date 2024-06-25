@@ -9,7 +9,7 @@
 // Block
 .main-header {
   height: calc(100vh - 2rem);
-  width: clamp(15rem, 25vw, 25rem);
+  width: clamp(20rem, 25vw, 25rem);
   transition: all 0.3s ease;
   @include border-right;
   // Element
