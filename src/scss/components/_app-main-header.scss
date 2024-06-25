@@ -7,13 +7,31 @@
 }
 
 // Block
-.main-header {
-  height: calc(100vh - 2rem);
-  width: clamp(20rem, 25vw, 25rem);
-  transition: all 0.3s ease;
-  @include border-right;
+.app {
   // Element
-  &__top {
+  &__main-header {
+    height: calc(100vh - 2rem);
+    width: clamp(20rem, 25vw, 25rem);
+    transition: all 0.3s ease;
+    @include border-right;
+    /*-------------------- 
+    following styles are for
+    minimized AppMainHeader
+    ---------------------*/
+    &.minimized {
+      width: 10rem;
+      // Element
+      .app__main-header-top {
+        /*--------------------
+        center the toggle button
+        when header minimized 
+        ---------------------*/
+        justify-content: center;
+      }
+    }
+  }
+  // Element
+  &__main-header-top {
     height: 5.5rem;
     display: flex;
     align-items: center;
@@ -21,7 +39,7 @@
     @include border-bottom;
   }
   // Element
-  &__btn-toggle {
+  &__main-header-btn-toggle {
     @extend %main-header-toggle;
     background-image: url($icon-header-left);
     // Modifier
@@ -31,19 +49,7 @@
     }
   }
   // Element
-  &__logo {
+  &__main-header-logo {
     @include size-equal(3rem);
-  }
-  /*-------------------- 
-  Following styles are for
-  minimized MainHeader
-  ---------------------*/
-  &.minimized {
-    width: 10rem;
-    // Element
-    .main-header__top {
-      // center toggle button
-      justify-content: center;
-    }
   }
 }
