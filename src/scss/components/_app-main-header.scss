@@ -14,6 +14,7 @@
     width: clamp(20rem, 25vw, 25rem);
     transition: all 0.3s ease;
     @include border-right;
+    flex-shrink: 0;
     /*-------------------- 
     following styles are for
     minimized AppMainHeader
