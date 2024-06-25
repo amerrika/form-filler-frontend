@@ -17,7 +17,7 @@
       ></button>
     </div>
     <!-- AppMainNav -->
-    <AppMainHeaderNav v-if="!minimized" />
+    <AppMainHeaderNav :class="[!minimized ? 'enter-active' : 'leave-active']" />
   </header>
 </template>
 
