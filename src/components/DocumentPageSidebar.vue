@@ -1,14 +1,14 @@
 <template>
-  <div class="document-page-sidebar" :class="minimizedStyle">
+  <div class="document-page__sidebar" :class="minimizedStyle">
     <!-- Header -->
-    <div class="document-page-sidebar__header bg-primary-500">
+    <div class="document-page__sidebar-header bg-primary-500">
       <img
         src="/icons/icon-select-data.svg"
-        class="document-page-sidebar__header-icon"
+        class="document-page__sidebar-header-icon"
         alt=""
       />
       <h2
-        class="document-page-sidebar__header-title"
+        class="document-page__sidebar-header-title"
         :class="[!isMinimized ? 'enter-active' : 'leave-active']"
       >
         Popunjavanje dokumenta
@@ -18,18 +18,30 @@
     <button
       :class="
         isMinimized
-          ? 'document-page-sidebar__btn-toggle_minimized'
-          : 'document-page-sidebar__btn-toggle'
+          ? 'document-page__sidebar-btn-toggle_minimized'
+          : 'document-page__sidebar-btn-toggle'
       "
       @click="toggleSidebar"
     ></button>
     <!-- Content -->
-    <div class="document-page-sidebar__content"></div>
+    <div class="document-page__sidebar-main">
+      <DataToolbar>
+        <DataToolbarFieldGroup></DataToolbarFieldGroup>
+      </DataToolbar>
+    </div>
   </div>
 </template>
 
 <script>
+// Import Vue Components
+import DataToolbar from "./DataToolbar.vue";
+import DataToolbarFieldGroup from "./DataToolbarFieldGroup.vue";
+
 export default {
+  components: {
+    DataToolbar,
+    DataToolbarFieldGroup,
+  },
   data() {
     return {
       isMinimized: false,
