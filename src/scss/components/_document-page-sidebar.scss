@@ -14,27 +14,30 @@
 }
 
 // Block
-.document-page-sidebar {
-  height: calc(100vh - 7.5rem);
-  width: clamp(25rem, 30vw, 35rem);
-  @include border-left;
-  @include border-right;
-  transition: all 0.3s ease;
-  position: relative;
-  /*-------------------- 
-  Following styles are for
-  minimized Sidebar
-  ---------------------*/
-  &.minimized {
-    width: 5rem;
-    padding: none;
-    // Element
-    .document-page-sidebar__header {
-      justify-content: center;
+.document-page {
+  // Element
+  &__sidebar {
+    height: calc(100vh - 7.5rem);
+    width: clamp(25rem, 30vw, 35rem);
+    @include border-left;
+    @include border-right;
+    transition: all 0.3s ease;
+    position: relative;
+    /*-------------------- 
+    Following styles are for
+    minimized Sidebar
+    ---------------------*/
+    &.minimized {
+      width: 5rem;
+      padding: none;
+      // Element
+      .document-page-sidebar__header {
+        justify-content: center;
+      }
     }
   }
   // Element
-  &__header {
+  &__sidebar-header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -44,11 +47,11 @@
     @include border-bottom;
   }
   // Element
-  &__header-icon {
+  &__sidebar-header-icon {
     @include size-equal(3rem);
   }
   // Element
-  &__header-title {
+  &__sidebar-header-title {
     font-size: $fs-400;
     font-weight: $fw-600;
     color: $neutral-600;
@@ -64,7 +67,7 @@
     }
   }
   // Element
-  &__btn-toggle {
+  &__sidebar-btn-toggle {
     @extend %sidebar-btn-toggle;
     background-image: url($icon-header-right);
     // Modifier
@@ -72,5 +75,9 @@
       @extend %sidebar-btn-toggle;
       background-image: url($icon-header-left);
     }
+  }
+  // Element
+  &__sidebar-main {
+    height: calc(100% - 5.1rem);
   }
 }
