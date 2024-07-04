@@ -15,33 +15,27 @@
       </h2>
     </div>
     <!-- Toggle Button -->
-    <button
-      :class="
-        isMinimized
-          ? 'document-page__sidebar-btn-toggle_minimized'
-          : 'document-page__sidebar-btn-toggle'
-      "
-      @click="toggleSidebar"
-    ></button>
-    <!-- Content -->
+    <div class="document-page__sidebar-toggle-wrapper">
+      <button
+        :class="
+          isMinimized ? 'btn__icon_arrow-left' : 'btn__icon_arrow-right'
+        "
+        @click="toggleSidebar"
+      ></button>
+    </div>
+    <!-- Main -->
     <div class="document-page__sidebar-main">
-      <DataToolbar>
-        <DataToolbarFieldGroup></DataToolbarFieldGroup>
-      </DataToolbar>
+      <DocumentPageSidebarDataGroup></DocumentPageSidebarDataGroup>
     </div>
   </div>
 </template>
 
 <script>
 // Import Vue Components
-import DataToolbar from "./DataToolbar.vue";
-import DataToolbarFieldGroup from "./DataToolbarFieldGroup.vue";
+import DocumentPageSidebarDataGroup from "./DocumentPageSidebarDataGroup.vue";
 
 export default {
-  components: {
-    DataToolbar,
-    DataToolbarFieldGroup,
-  },
+  components: { DocumentPageSidebarDataGroup },
   data() {
     return {
       isMinimized: false,
