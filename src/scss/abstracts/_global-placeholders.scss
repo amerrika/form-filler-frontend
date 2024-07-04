@@ -5,49 +5,62 @@
 @use "./sizes" as *;
 @use "./typography" as *;
 
-%btn {
+// Block
+%g-btn {
   border: none;
   background: none;
   cursor: pointer;
-  @include focus($neutral-700);
-
-  &-center {
-    @extend %btn;
+  @include focus;
+  img {
+    @include size-equal(2rem);
+  }
+  // Modifier
+  &_center {
+    @extend %g-btn;
     display: grid;
     place-content: center;
   }
-
-  &-flex-between {
-    @extend %btn;
-    display: inline-flex;
+  // Modifier
+  &_between {
+    @extend %g-btn;
+    display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
-  &-flex-start {
-    @extend %btn;
-    display: inline-flex;
+  // Modifier
+  &_start {
+    @extend %g-btn;
+    display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
   }
-}
-
-%btn-icon-center {
-  @extend %btn;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  &:hover {
-    background-color: $neutral-500;
+  // Element
+  &__icon {
+    @extend %g-btn;
+    @include size-equal(2.4rem);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    &:hover {
+      background-color: $neutral-500;
+    }
   }
 }
 
-%arrow-down {
-  @extend %btn;
-  @include size-equal(2rem);
-  background: url($icon-arrow-down);
+// Block
+%g-icon {
+  border: none;
+  background: none;
   background-position: center;
+  // Element
+  &__arrow {
+    // Modifier
+    &_down {
+      background: url($icon-arrow-down);
+    }
+  }
 }
 
 %primary-styles {
