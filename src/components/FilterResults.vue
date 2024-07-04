@@ -5,7 +5,7 @@
       @click="toggleData(this, 'isMenuOpen')"
     >
       {{ btnText }}
-      <div class="filter__arrow"></div>
+      <div class="filter__icon"></div>
     </button>
     <Transition v-show="isMenuOpen">
       <ul
