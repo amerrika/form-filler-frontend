@@ -10,8 +10,8 @@
       <button
         :class="[
           minimized
-            ? 'app__main-header-btn-toggle_minimized'
-            : 'app__main-header-btn-toggle',
+            ? 'btn__icon_arrow-right'
+            : 'btn__icon_arrow-left',
         ]"
         @click="toggle"
       ></button>

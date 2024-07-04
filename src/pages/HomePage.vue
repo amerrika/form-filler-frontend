@@ -20,22 +20,22 @@
         icon-src="/icons/icon-favorite.svg"
       />
       <!-- List Box -->
-      <div class="list-box-fav br-10">
+      <div class="fav-listbox br-10">
         <!-- Header -->
-        <div class="list-box-fav__header pi-4 pb-2 bg-primary-500">
+        <div class="fav-listbox__header pi-4 pb-2 bg-primary-500">
           <h3 class="fs-500 fw-500 txt-neutral-600">Dodaj u bazu</h3>
-          <button class="btn-icon_settings"></button>
+          <button class="btn__icon_settings"></button>
         </div>
         <!-- Main -->
-        <ul class="list-box-fav__menu p-3 bg-neutral-100">
-          <li role="button" class="list-box-fav__item fs-300 p-2">
+        <ul class="fav-listbox__menu p-3 bg-neutral-100">
+          <li role="button" class="fav-listbox__item fs-300 p-2">
             <AddButton
               icon-src="/icons/icon-add-employee.svg"
               btn-text="Novog zaposlenog"
               link-to="/collections/employees/new"
             />
           </li>
-          <li role="button" class="list-box-fav__item fs-300 p-2">
+          <li role="button" class="fav-listbox__item fs-300 p-2">
             <AddButton
               icon-src="/icons/icon-add-company.svg"
               btn-text="Novu kompaniju"

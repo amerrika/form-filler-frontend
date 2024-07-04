@@ -14,7 +14,7 @@
       >
         <span v-if="!selectedOption">{{ btnText }}</span>
         <span v-else>{{ selectedOption.name }}</span>
-        <div class="select-single__arrow"></div>
+        <div class="select-single__icon"></div>
       </button>
       <Transition v-show="isMenuOpen">
         <ul
