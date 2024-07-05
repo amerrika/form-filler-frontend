@@ -50,8 +50,9 @@
     }
   }
   // Element
-  &__arrow {
-    @extend %arrow-down;
+  &__icon {
+    @extend %g-icon__arrow_down;
+    @include size-equal(2rem);
   }
   // Element
   &__menu {
