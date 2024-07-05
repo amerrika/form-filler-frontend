@@ -1,11 +1,5 @@
 @use "../abstracts/" as *;
 
-// Placeholders
-%main-header-toggle {
-  @extend %btn-icon-center;
-  @include size-equal(2.5rem);
-}
-
 // Block
 .app {
   // Element
@@ -38,16 +32,6 @@
     align-items: center;
     justify-content: space-between;
     @include border-bottom;
-  }
-  // Element
-  &__main-header-btn-toggle {
-    @extend %main-header-toggle;
-    background-image: url($icon-header-left);
-    // Modifier
-    &_minimized {
-      @extend %main-header-toggle;
-      background-image: url($icon-header-right);
-    }
   }
   // Element
   &__main-header-logo {
