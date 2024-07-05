@@ -10,7 +10,7 @@
   border: 1px solid $neutral-400;
   // Element
   &__btn-submit {
-    @extend %btn-flex-start;
+    @extend %g-btn_start;
     &:hover {
       @include hover-underline($color: $neutral-100);
     }
