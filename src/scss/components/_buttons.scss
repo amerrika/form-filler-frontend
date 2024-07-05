@@ -1,43 +1,33 @@
 @use "../abstracts/" as *;
 
-// Placeholders
-%btn-add {
-  @extend %btn-flex-start;
-  font-size: $fs-300;
-  font-weight: $fw-600;
-  color: $primary-blue;
-  img {
-    @include size-equal(2rem);
-  }
-}
-%btn-icon {
-  @extend %btn;
-  @include size-equal(2.4rem);
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  &:hover {
-    background-color: $neutral-500;
-  }
-}
-
 // Block
-.btn-add {
-  @extend %btn-add;
-}
-
-// Block
-.btn-icon {
-  @extend %btn-icon;
+.btn {
+  @extend %g-btn;
   // Modifier
-  &_info {
-    @extend %btn-icon;
-    background-image: url($icon-info);
+  &_start {
+    @extend %g-btn_start;
   }
-  // Modifier
-  &_settings {
-    @extend %btn-icon;
-    background-image: url($icon-settings);
+  // Element
+  &__icon {
+    // Modifier
+    &_info {
+      @extend %g-btn__icon;
+      background-image: url($icon-info);
+    }
+    // Modifier
+    &_settings {
+      @extend %g-btn__icon;
+      background-image: url($icon-settings);
+    }
+    // Modifier
+    &_arrow-left {
+      @extend %g-btn__icon;
+      background-image: url($icon-alt-arrow-left);
+    }
+    // Modifier
+    &_arrow-right {
+      @extend %g-btn__icon;
+      background-image: url($icon-alt-arrow-right);
+    }
   }
 }
