@@ -20,12 +20,10 @@
     gap: 1.5rem;
   }
   // Element
-  &__main-nav-link {
-    padding: 1.5rem 0 1.5rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    @include hover-underline;
+  &__main-nav-item {
+    &:hover {
+      @include hover-underline;
+    }
   }
   // Element
   &__main-nav-icon {
