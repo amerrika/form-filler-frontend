@@ -1,18 +1,5 @@
 @use "../abstracts/" as *;
 
-// Placeholders
-%sidebar-btn-toggle {
-  @extend %btn-icon-center;
-  border-radius: unset;
-  width: 2rem;
-  height: 6rem;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: $primary-500;
-}
-
 // Block
 .document-page {
   // Element
@@ -67,14 +54,16 @@
     }
   }
   // Element
-  &__sidebar-btn-toggle {
-    @extend %sidebar-btn-toggle;
-    background-image: url($icon-header-right);
-    // Modifier
-    &_minimized {
-      @extend %sidebar-btn-toggle;
-      background-image: url($icon-header-left);
-    }
+  &__sidebar-toggle-wrapper {
+    width: 2rem;
+    height: 6rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $primary-500;
+    display: flex;
+    align-items: center;
   }
   // Element
   &__sidebar-main {
