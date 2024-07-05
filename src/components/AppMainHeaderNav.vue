@@ -5,7 +5,7 @@
         <router-link
           to="/"
           activeClass="bg-primary-500"
-          class="app__main-nav-link txt-neutral-800 fs-300 fw-500"
+          class="btn_start p-3 txt-neutral-800 fs-300 fw-500"
         >
           <img class="app__main-nav-icon" src="/icons/icon-home.svg" alt="" />
           <span>Početna</span>
@@ -15,7 +15,7 @@
         <router-link
           to="/documents"
           activeClass="bg-primary-500"
-          class="app__main-nav-link txt-neutral-800 fs-300 fw-500"
+          class="btn_start p-3 txt-neutral-800 fs-300 fw-500"
         >
           <img
             class="app__main-nav-icon"
@@ -29,7 +29,7 @@
         <router-link
           to="/collections"
           activeClass="bg-primary-500"
-          class="app__main-nav-link txt-neutral-800 fs-300 fw-500"
+          class="btn_start p-3 txt-neutral-800 fs-300 fw-500"
         >
           <img
             class="app__main-nav-icon"
