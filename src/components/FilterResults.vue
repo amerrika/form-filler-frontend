@@ -1,13 +1,18 @@
 <template>
   <div :class="['filter_' + getTheme]" role="listbox">
     <button
-      :class="['filter__btn-toggle_' + getTheme]"
-      @click="toggleData(this, 'isMenuOpen')"
+      :class="['btn__dropdown-toggle_' + getTheme]"
+      class="p-2 br-5 g-2"
+      @click="toggleData(this, 'isExpanded')"
     >
       {{ btnText }}
-      <div class="filter__icon"></div>
+      <span
+        :class="[
+          isExpanded ? 'btn__dropdown-icon_up' : 'btn__dropdown-icon_down',
+        ]"
+      ></span>
     </button>
-    <Transition v-show="isMenuOpen">
+    <Transition v-show="isExpanded">
       <ul
         :class="['filter__menu_' + getTheme]"
         ref="selectMenu"
@@ -59,7 +64,7 @@ export default {
   },
   data() {
     return {
-      isMenuOpen: false,
+      isExpanded: false,
       allFilterOptions: [
         ...this.filterData.group1.options,
         ...this.filterData.group2.options,

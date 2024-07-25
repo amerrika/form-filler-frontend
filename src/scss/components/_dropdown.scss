@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+// Placeholders
+%dropdown-icon {
+  display: inline-block;
+  @include size-equal(2.5rem);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Block
+.dropdown {
+  // Element
+  &__header {
+  }
+  // Element
+  &__main {
+    padding-inline: 1rem;
+    padding-block: 2rem;
+  }
+}

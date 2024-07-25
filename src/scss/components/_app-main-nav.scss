@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 // Block
-.app {
+.app {  
   // Element
   &__main-nav {
     transition: all 0.2s ease;

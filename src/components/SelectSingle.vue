@@ -1,5 +1,5 @@
 <template>
-  <div class="select-single">
+  <div :class="['select-single_' + flexDirection]">
     <label class="select-single__label" :for="id">{{ label }}</label>
     <div
       :id="id"
@@ -9,14 +9,19 @@
     >
       <button
         type="button"
-        :class="['select-single__btn-toggle_' + propTheme]"
-        @click="toggleData(this, 'isMenuOpen')"
+        :class="['btn__dropdown-toggle_' + propTheme]"
+        class="p-2 br-5"
+        @click="toggleData(this, 'isExpanded')"
       >
         <span v-if="!selectedOption">{{ btnText }}</span>
         <span v-else>{{ selectedOption.name }}</span>
-        <div class="select-single__icon"></div>
+        <span
+          :class="[
+            isExpanded ? 'btn__dropdown-icon_up' : 'btn__dropdown-icon_down',
+          ]"
+        ></span>
       </button>
-      <Transition v-show="isMenuOpen">
+      <Transition v-show="isExpanded">
         <ul
           :class="['select-single__list-container_' + propTheme]"
           role="presentation"
@@ -47,6 +52,10 @@ export default {
       type: String,
       default: "primary",
     },
+    flexDirection: {
+      type: String,
+      default: "row",
+    },
     btnText: {
       type: String,
       default: "Button text",
@@ -73,7 +82,7 @@ export default {
   },
   data() {
     return {
-      isMenuOpen: false,
+      isExpanded: false,
     };
   },
   methods: {
@@ -81,8 +90,8 @@ export default {
       objName[propString] = !objName[propString];
     },
     handleMakingSelection(clickedOption) {
-      // toggle isMenuOpen
-      this.toggleData(this, "isMenuOpen");
+      // toggle isExpanded
+      this.toggleData(this, "isExpanded");
       // toggle isSelected of the clicked option
       this.toggleData(clickedOption, "isSelected");
       // only single selected option is possible

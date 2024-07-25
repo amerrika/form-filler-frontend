@@ -30,4 +30,26 @@
       background-image: url($icon-alt-arrow-right);
     }
   }
+  // Element
+  &__dropdown-toggle {
+    // Modifier
+    &_primary {
+      @extend %g-btn_between;
+      @extend %g-primary-styles;
+      width: 100%;
+    }
+  }
+  // Element
+  &__dropdown-icon {
+    &_down {
+      @extend %g-icon;
+      @include size-equal(2rem);
+      background-image: url($icon-alt-arrow-down);
+    }
+    &_up {
+      @extend %g-icon;
+      @include size-equal(2rem);
+      background-image: url($icon-alt-arrow-up);
+    }
+  }
 }

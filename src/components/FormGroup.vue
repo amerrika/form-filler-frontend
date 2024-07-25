@@ -3,7 +3,7 @@
     <label class="form-group__label" :for="id">{{ label }}</label>
     <div class="form-group__input-wrapper">
       <input
-        class="form-group__input"
+        class="form-group__input p-2 br-5"
         :type="type"
         :id="id"
         :placeholder="placeholder"

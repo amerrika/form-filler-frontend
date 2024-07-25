@@ -4,14 +4,6 @@
 %filter {
   position: relative;
 }
-%filter-toggle {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  border: none;
-}
 %filter-menu {
   position: absolute;
   top: 125%;
@@ -19,6 +11,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 %filter-submenu {
   display: flex;
@@ -38,28 +32,11 @@
     @extend %filter;
   }
   // Element
-  &__btn-toggle {
-    // Modifier
-    &_primary {
-      @extend %filter-toggle;
-      @extend %primary-styles;
-      font-weight: $fw-500;
-      &:hover {
-        background-color: $primary-500;
-      }
-    }
-  }
-  // Element
-  &__icon {
-    @extend %g-icon__arrow_down;
-    @include size-equal(2rem);
-  }
-  // Element
   &__menu {
     // Modifier
     &_primary {
       @extend %filter-menu;
-      @extend %primary-styles;
+      @extend %g-primary-styles;
     }
   }
   // Element

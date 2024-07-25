@@ -54,6 +54,7 @@
   border: none;
   background: none;
   background-position: center;
+  background-repeat: no-repeat;
   // Element
   &__arrow {
     // Modifier
@@ -63,14 +64,12 @@
   }
 }
 
-%primary-styles {
+%g-primary-styles {
   background-color: $primary-100;
   box-shadow: $box-shadow-primary;
   color: $neutral-800;
-  border-radius: 0.5rem;
   font-size: $fs-100;
-  min-width: 12rem;
-  padding: 1rem;
+  font-weight: $fw-500;
 }
 
 %error-bubble-up {

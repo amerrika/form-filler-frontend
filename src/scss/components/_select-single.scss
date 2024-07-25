@@ -11,15 +11,8 @@
 }
 %select-single {
   position: relative;
-}
-%select-single-toggle {
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  border: none;
-  width: 100%;
 }
 %select-single-menu {
   position: absolute;
@@ -39,9 +32,16 @@
 
 // Block
 .select-single {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+  // Modifier
+  &_row {
+    @extend %select-single;
+    flex-direction: row;
+  }
+  // Modifier
+  &_column {
+    @extend %select-single;
+    flex-direction: column;
+  }
   // Element
   &__label {
     font-size: $fs-200;
@@ -60,29 +60,13 @@
     }
   }
   // Element
-  &__btn-toggle {
-    // Modifier
-    &_primary {
-      @extend %select-single-toggle;
-      @extend %primary-styles;
-      font-weight: $fw-500;
-      &:hover {
-        background-color: $primary-500;
-      }
-      @include focus;
-    }
-  }
-  // Element
-  &__icon {
-    @extend %g-icon__arrow_down;
-    @include size-equal(2rem);
-  }
-  // Element
   &__list-container {
     // Modifier
     &_primary {
       @extend %select-single-menu;
-      @extend %primary-styles;
+      @extend %g-primary-styles;
+      padding: 1rem;
+      border-radius: 0.5rem;
     }
   }
   // Element

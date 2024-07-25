@@ -6,6 +6,7 @@ import AllEmployeesPage from "@/pages/AllEmployeesPage.vue";
 import NewCompanyPage from "@/pages/NewCompanyPage.vue";
 import DatabasePage from "@/pages/DatabasePage.vue";
 import DocumentPage from "@/pages/DocumentPage.vue";
+import Letter1 from "@/components/print-documents/Letter1.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,8 +43,15 @@ const router = createRouter({
     },
     {
       path: "/collections/companies/new",
-      name: "newcompany",
+      name: "new-company",
       component: NewCompanyPage,
+    },
+
+    // Print
+    {
+      path: "/print-letter",
+      name: "print-letter",
+      component: Letter1,
     },
   ],
 });

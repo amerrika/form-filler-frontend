@@ -18,7 +18,7 @@
       width: 5rem;
       padding: none;
       // Element
-      .document-page-sidebar__header {
+      .document-page__sidebar-header {
         justify-content: center;
       }
     }
@@ -64,9 +64,18 @@
     background-color: $primary-500;
     display: flex;
     align-items: center;
+    z-index: 10;
   }
   // Element
   &__sidebar-main {
     height: calc(100% - 5.1rem);
+    transition: all 0.2s ease;
+    /* Transition styles */
+    &.enter-active {
+      transform: translateX(0);
+    }
+    &.leave-active {
+      transform: translateX(500px);
+    }
   }
 }
