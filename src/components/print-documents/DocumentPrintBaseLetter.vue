@@ -1,8 +1,5 @@
 <template>
-  <div class="print-letter">
+  <div class="print__font-format">
     <slot></slot>
   </div>
 </template>
-<script>
-export default {};
-</script>

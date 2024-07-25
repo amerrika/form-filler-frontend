@@ -1,36 +1,57 @@
+// DM SANS
 @font-face {
-    font-family: "DM Sans";
-    font-weight: 300;
-    font-display: swap;
-    src: url("/fonts/DMSans-Light.woff") format("woff");
-  }
-  @font-face {
-    font-family: "DM Sans";
-    font-weight: 400;
-    font-display: swap;
-    src: url("/fonts/DMSans-Regular.woff") format("woff");
-  }
-  @font-face {
-    font-family: "DM Sans";
-    font-weight: 500;
-    font-display: swap;
-    src: url("/fonts/DMSans-Medium.woff") format("woff");
-  }
-  @font-face {
-    font-family: "DM Sans";
-    font-weight: 600;
-    font-display: swap;
-    src: url("/fonts/DMSans-SemiBold.woff") format("woff");
-  }
-  @font-face {
-    font-family: "DM Sans";
-    font-weight: 700;
-    font-display: swap;
-    src: url("/fonts/DMSans-Bold.woff") format("woff");
-  }
-  @font-face {
-    font-family: "Bree Serif";
-    font-weight: 400;
-    font-display: swap;
-    src: url("/fonts/BreeSerif-Regular.woff") format("woff");
-  }
+  font-family: "DM Sans";
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/DMSans-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/DMSans-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/DMSans-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/DMSans-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/DMSans-Bold.woff") format("woff");
+}
+// BREE SERIF
+@font-face {
+  font-family: "Bree Serif";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/BreeSerif-Regular.woff") format("woff");
+}
+// ROBOTO
+@font-face {
+  font-family: "Roboto Regular";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Roboto-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto Medium";
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Roboto-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto Bold";
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Roboto-Bold.woff") format("woff");
+}

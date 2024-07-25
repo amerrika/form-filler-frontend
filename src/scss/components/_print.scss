@@ -1,0 +1,36 @@
+@use "../abstracts/" as *;
+
+// Block
+.print {
+  // Element
+  &__font-format {
+    font-family: $print-ff;
+    font-size: $print-fs;
+    line-height: $print-lh;
+    white-space: normal;
+    letter-spacing: $print-ls;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+  // Element
+  &__data-holder {
+    padding: 0.15em 0.25em;
+    box-shadow: $box-shadow-primary;
+
+    @media print {
+      /* Print Styles */
+      padding: unset;
+      box-shadow: unset;
+    }
+  }
+  // Element
+  &__heading {
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  // Element
+  &__list {
+    list-style: disc inside;
+  }
+}

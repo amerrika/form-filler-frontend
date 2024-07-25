@@ -1,8 +1,10 @@
 $-ff-bree-serif: "Bree Serif", serif;
 $-ff-dm-sans: "DM Sans", sans-serif;
+$-ff-roboto: "Roboto", sans-serif;
 
 $ff-base: $-ff-dm-sans;
 $ff-accent: $-ff-bree-serif;
+$ff-print: $-ff-roboto;
 
 // font-sizes
 $fs-base: calc(15px + 0.390625vw);

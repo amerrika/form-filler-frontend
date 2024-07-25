@@ -1,18 +1,21 @@
 @use "../abstracts/" as *;
 
 // Block
-.document-viewer {
-  height: calc(100vh - 7.5rem);
-  flex-grow: 2;
+.document-page {
   // Element
-  &__outer {
+  &__viewer {
+    height: calc(100vh - 7.5rem);
+    flex-grow: 2;
+  }
+  // Element
+  &__viewer-outer {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   // Element
-  &__inner {
+  &__viewer-inner {
     @include border-all($width: 2px, $color: $border-medium);
     overflow: scroll;
     height: calc(100vh - 15rem);

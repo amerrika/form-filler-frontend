@@ -1,11 +1,15 @@
 <template>
   <div class="document-page">
+    <!-- TITLE -->
     <PageTitle
       title="Uredite odabrani dokument"
       icon-src="/icons/icon-edit-document.svg"
     />
+    <!-- CONTAINER -->
     <div class="flex-end g-4">
+      <!-- VIEWER -->
       <DocumentPageViewer />
+      <!-- RIGHT SIDEBAR -->
       <DocumentPageSidebar />
     </div>
   </div>
