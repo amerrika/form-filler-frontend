@@ -1,10 +1,8 @@
 <template>
   <div class="document-page__viewer">
-    <div class="document-page__viewer-outer">
-      <div class="document-page__viewer-inner">
-        <!-- Print document -->
-        <Letter1 />
-      </div>
+    <div class="document-page__viewer-container">
+      <!-- Print document -->
+      <Letter1 />
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="print__font-format">
+  <div class="print-page">
     <slot></slot>
   </div>
 </template>

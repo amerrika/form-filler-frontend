@@ -1,17 +1,14 @@
 @use "../abstracts/" as *;
 
 // Block
-.print {
-  // Element
-  &__font-format {
-    font-family: $print-ff;
-    font-size: $print-fs;
-    line-height: $print-lh;
-    white-space: normal;
-    letter-spacing: $print-ls;
-    word-wrap: break-word;
-    word-break: break-word;
-  }
+.print-page {
+  font-family: $print-ff;
+  font-size: $print-fs;
+  line-height: $print-lh;
+  white-space: normal;
+  letter-spacing: $print-ls;
+  word-wrap: break-word;
+  word-break: break-word;
   // Element
   &__data-holder {
     padding: 0.15em 0.25em;
@@ -34,3 +31,9 @@
     list-style: disc inside;
   }
 }
+
+
+// print-page
+// print-page__heading
+// print-page__list
+// print-page__data-holder

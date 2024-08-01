@@ -6,21 +6,32 @@
   &__viewer {
     height: calc(100vh - 7.5rem);
     flex-grow: 2;
+    display: grid;
+    place-content: center;
+    @media print {
+      height: auto;
+      display: block;
+    }
   }
   // Element
-  &__viewer-outer {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  // Element
-  &__viewer-inner {
+  &__viewer-container {
     @include border-all($width: 2px, $color: $border-medium);
     overflow: scroll;
     height: calc(100vh - 15rem);
     width: 816px;
     padding: 4rem;
     background-color: #f6f8fc;
+    /* Print Styles */
+    @media print {
+      border: none;
+      overflow: visible;
+      height: auto;
+      width: auto;
+      padding: 0;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
   }
 }

@@ -9,6 +9,9 @@
   gap: 2rem;
   padding: 2rem;
   @include border-bottom;
+  @media print {
+    display: none;
+  }
   // Element
   &__icon {
     @include size-equal(2.5rem);

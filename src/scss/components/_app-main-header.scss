@@ -24,6 +24,10 @@
         justify-content: center;
       }
     }
+
+    @media print {
+      display: none;
+    }
   }
   // Element
   &__main-header-top {
